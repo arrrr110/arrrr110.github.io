@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://arrrr110.github.io</id>
+    <title>医事与摩托车维修技术</title>
+    <updated>2023-03-17T14:21:31.867Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://arrrr110.github.io"/>
+    <link rel="self" href="https://arrrr110.github.io/atom.xml"/>
+    <subtitle>享受热爱——23画生的博客</subtitle>
+    <logo>https://arrrr110.github.io/images/avatar.png</logo>
+    <icon>https://arrrr110.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, 医事与摩托车维修技术</rights>
+    <entry>
+        <title type="html"><![CDATA[JS的一个容易弄错的特性：<= 和 =<]]></title>
+        <id>https://arrrr110.github.io/post/js-de-yi-ge-rong-yi-nong-cuo-de-te-xing-less-he-less/</id>
+        <link href="https://arrrr110.github.io/post/js-de-yi-ge-rong-yi-nong-cuo-de-te-xing-less-he-less/">
+        </link>
+        <updated>2022-07-12T07:18:45.000Z</updated>
+        <content type="html"><![CDATA[<p>1 &lt;= 2 // 对的<br>
+1 =&lt; 2 // 程序会报错</p>
+<p>被这个微不足道的地方卡了几十分钟，留个记录纪念一下</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《货币、权力与人》（翟东升）读书笔记]]></title>
+        <id>https://arrrr110.github.io/post/lesslesshuo-bi-quan-li-yu-ren-greatergreater-di-dong-sheng-du-shu-bi-ji/</id>
+        <link href="https://arrrr110.github.io/post/lesslesshuo-bi-quan-li-yu-ren-greatergreater-di-dong-sheng-du-shu-bi-ji/">
+        </link>
+        <updated>2022-05-24T08:03:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>1971年之后，美元关闭了黄金兑换窗口，将货币带入“后布雷顿森林体系”时代，也就是美元本位时代。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>1971年之后，美元关闭了黄金兑换窗口，将货币带入“后布雷顿森林体系”时代，也就是美元本位时代。</p>
+<!-- more -->
+<p>在这个时代，能源国和工业国互相锁定在美元体系中，成为了依附美国的基石，供养了以美国为首的西方：石油-尼龙-5亿件衬衫换一架波音747就是这个价值链的榜样，也是全球化的样板——美元印出来后，中国负责生产，美国负责拿着成本5美分的100元绿纸片，购买中国货。</p>
+<p>正如潮水再涨，也漫不过大船的道理一样：这世上任何一个国家，只要仍然将自身货币的信用基础建立在使用美元、购买美债之上，就永世无法超越美国，就永远是美国观想宇宙中的一只猴子。</p>
+<p>在过去，美国在扩张期通过放水的方式收取“铸币税”（经测算广义铸币税约占美GDP的20%）；在收缩期则通过制造区域经济危机的方式开采“血钻”，将一个个主权国家变色为买办和官僚游乐园：一名美国医生，2015年入籍乌克兰，只需要4年的时间就能成为卫生部长，正部级干部。</p>
+<p>中国是最大的变数：一方面，中国为世界提供了大量的廉价商品，缓解了美元的通胀，为美国支付了可观的“铸币税”，培养了大量的经济买办、文化汉奸；另一方面，中国拒绝开放国内资本部门，坚持独立的财政政策，拒绝任命美国人做省部级干部，甚至在其他经济体危机的时候“抬一手”，严重干扰了美开采“血钻”的进程——中国就像一颗煮不烂的铜豌豆，与美国亦敌亦友，在拳击台上不硬碰硬打直拳，总是搂搂抱抱，找到机会还闷一拳骗点数。</p>
+<p>不过今天不一样了，美国有了新思路：立足本国全球领先的医学科研能力，“以快制快”，释放“遗传信息炸弹”，开展病毒战：成本低、传播快、隐蔽性强，由于遗传信息炸弹可以定点攻击特定人种体内的蛋白受体，引发的免疫风暴足够摧毁人的器官——相当于高速铁路上放砖头，专门制造高速列车脱轨，毁伤能量的投送效率趋近于无限——这真真是一个好武器。</p>
+<p>以上都是我的分析和推测，理由也很简单：目前美国拒绝了所有来自于联合国的溯源调查要求，也一直拒绝向国际社会正面直接解释——如果不是心理有鬼，为啥会遮遮掩掩呢？</p>
+<p>——23画生</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1653380237919.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[用Git和朋友一起开发项目：配置Git GUI汉化包]]></title>
+        <id>https://arrrr110.github.io/post/yong-git-he-peng-you-yi-qi-kai-fa-xiang-mu-shi-yong-git-gui-han-hua-bao/</id>
+        <link href="https://arrrr110.github.io/post/yong-git-he-peng-you-yi-qi-kai-fa-xiang-mu-shi-yong-git-gui-han-hua-bao/">
+        </link>
+        <updated>2022-05-07T14:56:15.000Z</updated>
+        <summary type="html"><![CDATA[<p>git类应用是软件开发中绕不过的路，理由很简单：大部分有价值的项目需要的开发技能之多之复杂，以至于团队合作才能完成——git类应用是代码版本管理、分享项目源码的重要工具。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>git类应用是软件开发中绕不过的路，理由很简单：大部分有价值的项目需要的开发技能之多之复杂，以至于团队合作才能完成——git类应用是代码版本管理、分享项目源码的重要工具。</p>
+<!-- more -->
+<h1 id="git简单使用">Git简单使用</h1>
+<p>常用的Git应用平台有：github.com、gitee.com等</p>
+<p><a href="https://cloud.tencent.com/developer/article/1414120">程序员常用的6个免费Git代码托管平台</a></p>
+<p><a href="https://gitee.com/help/labels/79">初次使用git</a><br>
+<img src="https://arrrr110.github.io/post-images/1651936633024.png" alt="" loading="lazy"><br>
+当我们把项目用Git初始化后，就可以用Git工具上传、克隆代码了。从使用的体验上来看，虽然没有通过代码包传输文件方便，但是规范了不少，代码有了安全感。</p>
+<p>值得一提的是小程序开发工具，也集成了自己的Git应用，之前在原生开发的时候也挺好用。<br>
+<img src="https://arrrr110.github.io/post-images/1651936551913.png" alt="" loading="lazy"></p>
+<p>可惜框架开发的时候用不了了，因此不论如何，还是绕不开学习Git。</p>
+<h1 id="汉化git-gui"><a href="https://blog.csdn.net/u014723479/article/details/102869727">汉化Git GUI</a></h1>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1651936022255.png" alt="" loading="lazy"></figure>
+<p><a href="https://github.com/stayor/git-gui-zh">汉化包下载地址</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JavaScript语言中关于同步/异步特性、async函数、Promise函数的学习]]></title>
+        <id>https://arrrr110.github.io/post/javascript-yu-yan-zhong-guan-yu-tong-bu-yi-bu-te-xing-async-han-shu-promise-han-shu-de-xue-xi/</id>
+        <link href="https://arrrr110.github.io/post/javascript-yu-yan-zhong-guan-yu-tong-bu-yi-bu-te-xing-async-han-shu-promise-han-shu-de-xue-xi/">
+        </link>
+        <updated>2022-04-27T15:03:44.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近在学习Vue框架，并探索对小程序的重构，开发过程中越发感觉到到基础知识的重要性，特地读了几篇不错的文章，在此记录：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近在学习Vue框架，并探索对小程序的重构，开发过程中越发感觉到到基础知识的重要性，特地读了几篇不错的文章，在此记录：</p>
+<!-- more -->
+<h1 id="第一篇js中的同步和异步">第一篇：<a href="https://zhuanlan.zhihu.com/p/40803301">JS中的同步和异步</a></h1>
+<p><strong>摘抄：</strong><br>
+所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入&quot;任务队列&quot;（task queue）的任务，只有等主线程任务执行完毕，&quot;任务队列&quot;开始通知主线程，请求执行任务，该任务才会进入主线程执行。</p>
+<p>具体来说，异步运行机制如下：</p>
+<p>（1）所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。<br>
+（2）主线程之外，还存在一个&quot;任务队列&quot;（task queue）。只要异步任务有了运行结果，就在&quot;任务队列&quot;之中放置一个事件。<br>
+（3）一旦&quot;执行栈&quot;中的所有同步任务执行完毕，系统就会读取&quot;任务队列&quot;，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。<br>
+（4）主线程不断重复上面的第三步。</p>
+<h1 id="第二篇js中的同步和异步">第二篇：<a href="https://www.cnblogs.com/Yellow-ice/p/10433423.html">js中的同步和异步</a></h1>
+<p><strong>摘抄：</strong><br>
+我们可以使用new Promise进行Promise的创建</p>
+<pre><code>function wait(time) {
+    return new Promise(function(resolve,reject) {
+    setTimeout(resolve,time);
+});
+</code></pre>
+<p>}<br>
+这个时候我们就可以使用Promise处理异步任务啦</p>
+<pre><code>wait(1000).then(function(){
+    console.log(1);
+})
+</code></pre>
+<p>上面这个例子表示1秒后输出1，同样的道理，我们可以使用Promise进行更加复杂的操作，关于更多的操作，就不继续说啦，关于异步的实现，其实还有其它的一些方法，但是因为上面说的这两种方法用的比较多，所以就只说上面这两种了</p>
+<h1 id="第三篇async函数">第三篇：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function">async函数</a></h1>
+<p><strong>摘要：</strong><br>
+async函数一定会返回一个promise对象。如果一个async函数的返回值看起来不是promise，那么它将会被隐式地包装在一个promise中。</p>
+<p>例如，如下代码:</p>
+<pre><code>async function foo() {
+    return 1
+}
+</code></pre>
+<p>等价于:</p>
+<pre><code>function foo() {
+    return Promise.resolve(1)
+}
+</code></pre>
+<p>async函数的函数体可以被看作是由0个或者多个await表达式分割开来的。从第一行代码直到（并包括）第一个await表达式（如果有的话）都是同步运行的。这样的话，一个不含await表达式的async函数是会同步运行的。然而，如果函数体内有一个await表达式，async函数就一定会异步执行。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[uni-app框架重构原生微信小程序：对接云开发数据库的大坑，找不到环境]]></title>
+        <id>https://arrrr110.github.io/post/uni-app-kuang-jia-chong-gou-yuan-sheng-wei-xin-xiao-cheng-xu-dui-jie-yun-kai-fa-shu-ju-ku-de-da-keng-zhao-bu-dao-huan-jing/</id>
+        <link href="https://arrrr110.github.io/post/uni-app-kuang-jia-chong-gou-yuan-sheng-wei-xin-xiao-cheng-xu-dui-jie-yun-kai-fa-shu-ju-ku-de-da-keng-zhao-bu-dao-huan-jing/">
+        </link>
+        <updated>2022-04-21T19:31:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>很多网友说使用框架虽然会方便一些，但是大坑也很多，我今天算是体会了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>很多网友说使用框架虽然会方便一些，但是大坑也很多，我今天算是体会了。</p>
+<!-- more -->
+<p>我今天花了很长时间解决uni-app无法连接小程序云开发数据库的问题。</p>
+<p>我参考了很多的教程，都大同小异:<a href="https://blog.csdn.net/qq_45228330/article/details/118532144?spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4.pc_relevant_antiscanv2&amp;utm_relevant_index=8">uniapp实现微信小程序云开发数据库访问，并解决云开发数据库获取不到数据问题</a></p>
+<p>但是我的问题非常特殊：<br>
+<code>errMsg: Environment not found</code></p>
+<p>我对比了很多教程，操作都没问题的情况下，百思不得其解。</p>
+<p>最后我都绝望的准备去睡了，后来抱着试一试的心态，调整了一下环境ID，启用了自带的免费环境，结果却一次成功……</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1650569841227.png" alt="" loading="lazy"></figure>
+<p>黄色的环境ID总是不行，耗费了我至少6个小时的时间；换到红色的默认环境，立刻就可以了。</p>
+<p>如此天坑，肯定要记录一下，希望以后其他朋友遇到的时候能看到我这篇心得。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我打出了一个炉石传世乱斗名场面……]]></title>
+        <id>https://arrrr110.github.io/post/wo-da-chu-liao-yi-ge-lu-shi-chuan-shi-luan-dou-ming-chang-mian/</id>
+        <link href="https://arrrr110.github.io/post/wo-da-chu-liao-yi-ge-lu-shi-chuan-shi-luan-dou-ming-chang-mian/">
+        </link>
+        <updated>2022-04-09T17:37:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>一图胜千言</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一图胜千言</p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1649525899520.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[魔都小奶爸：救赎]]></title>
+        <id>https://arrrr110.github.io/post/mo-du-xiao-nai-ba-jiu-shu/</id>
+        <link href="https://arrrr110.github.io/post/mo-du-xiao-nai-ba-jiu-shu/">
+        </link>
+        <updated>2022-04-05T17:09:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>3月，新冠疫情的变种：奥密克戎突然冲击进上海这个城市。猝不及防地我们，在中旬就进入了小区封闭的模式，到今天已经近20天了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>3月，新冠疫情的变种：奥密克戎突然冲击进上海这个城市。猝不及防地我们，在中旬就进入了小区封闭的模式，到今天已经近20天了。</p>
+<!-- more -->
+<p>由于有疫苗保护，我并不惧怕这个传染病，因此和媳妇在家里隔离的颇为悠闲，周末看看剧，平时远程办公。我作为一个个体户，虽然陷入了“手停口停”的尴尬，但好在时间颇多，写写代码，看看文档也为自己的水平提升感到开心（本博客就是刚封闭的时候开始部署的）。</p>
+<h1 id="在混乱中摸索">在混乱中摸索</h1>
+<p>本来我的生活会一直那么平静，直到有一天一通电话打破了我平静的生活，我的一位宝妈朋友联系我，告诉我说他们小区的宝宝因为疫情封闭的原因，出现不同程度的物资短缺，希望我能帮助他们。这让我意识到我的平静只是一种假象，其实很多城市家庭并没有那么精打细算，也并没有那么能抵御风险。</p>
+<p>于是我决定帮助他们。</p>
+<p>我们成立了一个小区业主群，群里都是忧心忡忡的家长，他们无法下楼，依然在想尽办法为自己的孩子采购物资，我委托了一位德高望重的母婴行业高管，请她为我寻找货源，正好她所在的企业是一家名声卓著的母婴连锁品牌，拥有大量的库存。于是这位高管立刻给我介绍了有关负责人，并引荐了最近的一家门店管理者。</p>
+<p>似乎我们好像看见了曙光。然而在实际采购中发现，这个社会的混乱比我想象中的还要夸张：因为疫情封闭的原因，门店的人手极度短缺，一两名员工将要面临如山一般的货物，分拣工作繁重，大量的采购订单雪片般涌来，但是偏偏没有人手有资格运输这些货物，一时间，订单淤积，人员疲惫，客户焦虑——甚至连城市外围的大仓库都已经很难进城，供应链出现明显的断裂。</p>
+<h1 id="混乱是阶梯">混乱是阶梯</h1>
+<p>面对棘手的局面，我一方面快速的了解市场的情况；另一方面不断地向各个渠道开展摸底，寻找货源。最终幸运的找到了热心帮助的志愿者和货运司机，我也从笨拙的管理中逐渐思路清晰了起来。</p>
+<p>于是实现了一个小区的采购订单，并和小区里的家长一起，殷切的期盼着货物的到来。</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1649177127310.png" alt="" loading="lazy"></figure>
+<p>在休息的时候，我意识到我在找货中遇到的困难，恐怕是全上海有宝宝家庭的一个缩影，越深想，我越恐惧，我耳畔仿佛想起了宝宝的呼喊，和家长的自责，我下定决心必须做点什么。因此我开始将我的管理思路聚焦关键的堵点上：即家长们零碎的需求和秩序破坏后低效的订单沟通上。</p>
+<p>为此我设计了一张[问卷表单]（https://jinshuju.net/f/UV5mS1），他可以帮助我快速的了解家长的需求，由于内置了地址模块，我可以快速的吧多个需求按照地域分布绑定起来，将采购意向打包给当地的门店。诚然，这个活还是很辛苦，但表单的支持让我的工作变得可能。</p>
+<p>为了聚集大量的用户，我采用了企业微信的加群功能，它能在满群时自动建立新群，颇为省心，让我可以专注于业务，甚至感到了舒心。</p>
+<p>最后，我设计了一张医生的海报，由医生发起了一个“互助购物”的倡议活动。这个倡议活动是邀请所有有需求的家庭，通过企业微信的二维码，进入到社群里提交需求，再由我统一管理，将零散的订单集合在一起统一对接货源。</p>
+<p>最终结果超出了我的预期：</p>
+<p>整个上海的封闭造成的副作用是明显的，全上海的母婴人群都陷入了奶粉和纸尿布的匮乏，为了给他们对接货源，我昨天一整天就拉起了1000人的母婴群，这背后也不知道有多少忧心忡忡的家庭。</p>
+<figure data-type="image" tabindex="2"><img src="https://arrrr110.github.io/post-images/1649175717665.jpg" alt="" loading="lazy"></figure>
+<p>当我忙碌了一天静下来的时候，我才反应过来，我今天一天获取的新用户，超过了过去的一年，这是多么惊人的结果，这背后是多么惊人的困难。一座城市陷入混乱，所有人都变得脆弱，而坚强的人只要能爬起来，就能暂时比其他人高了一截。我不禁感慨：混乱是阶梯。</p>
+<p>一个2500万人的超级城市，因为一道行政命令进入了停滞，上海这个“巨人”的所有血管都卡死了，新血液流不出去，旧血液还不回来，躯体失去了力量，进入了窒息般的痉挛。放眼望去，真的有一个经济体，可以保障一个特大型城市在手术的过程中心脏摘除，血管卡死么？</p>
+<p>我真的很为这座城市的命运担忧，虽然她一定会好转起来，但也一定会留下痛苦的印记，这些印记将实时提醒着我们，一座城市有多么的脆弱，城市里的人，有多么的脆弱。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[uni-app框架重构原生微信小程序：序章&对接‘云开发’]]></title>
+        <id>https://arrrr110.github.io/post/uni-app-kuang-jia-chong-gou-yuan-sheng-wei-xin-xiao-cheng-xu/</id>
+        <link href="https://arrrr110.github.io/post/uni-app-kuang-jia-chong-gou-yuan-sheng-wei-xin-xiao-cheng-xu/">
+        </link>
+        <updated>2022-03-31T12:19:06.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://uniapp.dcloud.io/">uni-app</a> 是一个使用 Vue.js (opens new window)开发所有前端应用的框架，</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://uniapp.dcloud.io/">uni-app</a> 是一个使用 Vue.js (opens new window)开发所有前端应用的框架，</p>
+<!-- more -->
+<p>开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。</p>
+<p>在此之前，我和朋友完成了一个原生小程序的开发项目：语言评估<br>
+<img src="https://arrrr110.github.io/post-images/1648729290505.jpg" alt="" loading="lazy"></p>
+<h1 id="为什么我愿意学习uni-app">为什么我愿意学习uni-app？</h1>
+<p>要实现微信小程序开发，大抵有以下两条路：</p>
+<ol>
+<li>采用微信自带的IDE工具，遵循小程序自创的编码规则搭建小程序；</li>
+<li>采用可兼容微信小程序的框架，遵循框架的编码规则搭建小程序，并在微信IDE上自动编译实现。</li>
+</ol>
+<p>原生开发我已经有项目经验了，也体验了原生开发的一些优势，但我依然对基于Vue.js为基础的框架非常感兴趣，原因是考虑到Vue.js在前端的泛用性，我希望利用框架提升开发效率。</p>
+<p>正好我所在的城市因为疫情进入了管控，自己的现金流业务几乎停滞，那么借此机会就开始学习把！</p>
+<h1 id="补齐框架的短板微信云开发">补齐框架的短板：微信云开发</h1>
+<p>采用框架开发微信小程序不是没有隐忧的，我在原生开发过程中，最满意的就是微信“云开发”功能，这个功能最大的优势就是<strong>让小程序部署零门槛</strong>，这个优势对于我这种开发小白来说，是颠覆性的，天知道我在部署业务方面多少次被撞得头破血流，以至于我在构思新应用的时候迟迟不敢考虑后端问题、甚至部署问题。</p>
+<p>微信云开发带来的福音有几点：</p>
+<ol>
+<li>在IDE工具中，前、后端和数据库一体化了，调试时不需要考虑服务器的适配问题；</li>
+<li>云开发省去了很多前端对数据库访问的权限问题，降低了调试难度；</li>
+<li>云开发中的“云函数”功能规避了本地访问数据库的查询限制，缴费也比较弹性。</li>
+</ol>
+<p>以上三个原生开发的优势，在框架开发中都要继承过来，否则框架开发是缺失的，不补齐这个短板，未来开发一定会遇到更多大坑。</p>
+<h1 id="对接云开发">对接“云开发”</h1>
+<p>我参考了这个帖子，从uniapp新项目做起：<br>
+<a href="https://blog.csdn.net/YNEWA/article/details/106019518">https://blog.csdn.net/YNEWA/article/details/106019518</a><br>
+按部就班的操作，应该就可以了。<br>
+之前是从小程序IDE上配置，弄了好久没成功，尤其是copy-webpack-plugin的版本问题，只要严格按照帖子的引导，应该就可以了。</p>
+<p>在<strong>源码视图</strong>下，配置<strong>云开发目录</strong><br>
+<a href="https://uniapp.dcloud.io/collocation/manifest.html#cloudfunctionroot">https://uniapp.dcloud.io/collocation/manifest.html#cloudfunctionroot</a></p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1648747585195.png" alt="" loading="lazy"></figure>
+<p>后续将利用云函数，开展正式的重构设计。</p>
+<!-- more -->
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[解决uniapp代码在小程序中报错问题[ app.json 文件内容错误] app.json: app.json 未找到]]]></title>
+        <id>https://arrrr110.github.io/post/jie-jue-uniapp-dai-ma-zai-xiao-cheng-xu-zhong-bao-cuo-wen-ti-appjson-wen-jian-nei-rong-cuo-wu-appjson-appjson-wei-zhao-dao/</id>
+        <link href="https://arrrr110.github.io/post/jie-jue-uniapp-dai-ma-zai-xiao-cheng-xu-zhong-bao-cuo-wen-ti-appjson-wen-jian-nei-rong-cuo-wu-appjson-appjson-wei-zhao-dao/">
+        </link>
+        <updated>2022-03-28T13:12:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>uni-app 是一个使用 Vue.js开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>uni-app 是一个使用 Vue.js开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。</p>
+<!-- more -->
+<p>[1].https://uniapp.dcloud.io/</p>
+<p>经过小程序原生开发的历练，我终于开始探索uniapp的框架了，学习的动力，在于我们之前一个项目是用本框架搭建的，我后续如果要升级迭代，不得不在这个框架基础上进行。</p>
+<p><strong>既来之，则安之</strong> ，相比探索新应用带来的满足感，学习框架耗费的精力也算不得什么了。</p>
+<p>我在使用该框架的时候，遇到了问题：</p>
+<pre><code>app.json 文件内容错误
+</code></pre>
+<p>经过搜索，发现是配置文件的问题，</p>
+<p>[2].https://blog.csdn.net/zrb670950909/article/details/119914379<br>
+调整过一下就好了：</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1648473470754.png" alt="" loading="lazy"></figure>
+<p>接下来给自己定几个uniapp的学习计划吧：</p>
+<ol>
+<li>吃透原项目的基本功能和结构（难度不小）；</li>
+<li>对比框架开发和原生开发的优劣难易；</li>
+<li>属性Vue的基础特性（毕竟比较主流）。</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小程序开发中JS异步转同步的操作]]></title>
+        <id>https://arrrr110.github.io/post/xiao-cheng-xu-kai-fa-zhong-js-yi-bu-zhuan-tong-bu-de-cao-zuo/</id>
+        <link href="https://arrrr110.github.io/post/xiao-cheng-xu-kai-fa-zhong-js-yi-bu-zhuan-tong-bu-de-cao-zuo/">
+        </link>
+        <updated>2022-03-24T06:28:44.000Z</updated>
+        <summary type="html"><![CDATA[<p>在小程序项目中，经常会遇到某个函数需要等待另一个异步函数结果的情况……</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在小程序项目中，经常会遇到某个函数需要等待另一个异步函数结果的情况……</p>
+<!-- more -->
+<p>比如我这次遇到的问题，我希望扫码获得的url数据能用在后面的函数中：</p>
+<pre><code>index.js：
+  /*`扫码函数 */
+  async getScanCode(){
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: async (res) =&gt; {
+        console.log(&quot;scan:&quot;,res.result)  // 获得
+        var url = res.result
+        var s_id = await this.checkStorage(url,arr)  // 这里用到回调函数
+        if(s_id){
+          this.getPlanet(s_id)
+        }else{ 
+          let qrObj = that.checkDB(url, 'QR_CODE') // 这里用到回调函数
+          console.log('qrObj:',qrObj) // 目标是这里能获得数据
+……
+            }
+……
+    },
+</code></pre>
+<p>看起来很笨重，也确实难以实现，到this.checkDB这里就丢了：</p>
+<pre><code>console.log('qrObj:',qrObj) // qrObj: undefined
+</code></pre>
+<p>在小程序项目中，一旦遇到稍微复杂点的功能或数据流转，都会遇到这种问题，因此必须想办法解决。</p>
+<p>在分析问题中，有网友分析可能是success后面是“闭包”的问题，推荐采用<br>
+var that =this 来声明，后来实践不行。</p>
+<p>经过检索学习，发现了这个帖子：https://www.cnblogs.com/gxp69/archive/2019/04/29/10790368.html</p>
+<p>我仔细验证了一下代码，发现是可以的，因此我的代码也升级如下：</p>
+<pre><code>  scanCode(){ // 利用new Promise
+    return new Promise(resolve =&gt; {
+      wx.scanCode({
+        onlyFromCamera: true,
+        success: (res) =&gt; {return resolve(res.result)}
+      })
+    });
+  },
+
+async getScanCode(){
+    let url =this.scanCode()  // 关键方法
+    url = await url
+    console.log('getUrl',url) //  getUrl https://work.weixin.qq.com/
+    ……
+}
+</code></pre>
+<p>这样就成功的把异步转化为同步了</p>
+]]></content>
+    </entry>
+</feed>
