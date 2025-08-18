@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>uni-app框架重构原生微信小程序：对接云开发数据库的大坑，找不到环境 | 医事与摩托车维修技术</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://arrrr110.github.io/favicon.ico?v=1755485545755">
+<link rel="stylesheet" href="https://arrrr110.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="很多网友说使用框架虽然会方便一些，但是大坑也很多，我今天算是体会了。
+我今天花了很长时间解决uni-app无法连接小程序云开发数据库的问题。
+我参考了很多的教程，都大同小异:uniapp实现微信小程序云开发数据库访问，并解决云开发数据库获取..." />
+    <meta name="keywords" content="uni-app,微信小程序" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://arrrr110.github.io">
+        <img src="https://arrrr110.github.io/images/avatar.png?v=1755485545755" class="site-logo">
+        <h1 class="site-title">医事与摩托车维修技术</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      享受热爱——23画生的博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://arrrr110.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">uni-app框架重构原生微信小程序：对接云开发数据库的大坑，找不到环境</h2>
+            <div class="post-date">2022-04-22</div>
+            
+            <div class="post-content" v-pre>
+              <p>很多网友说使用框架虽然会方便一些，但是大坑也很多，我今天算是体会了。</p>
+<p>我今天花了很长时间解决uni-app无法连接小程序云开发数据库的问题。</p>
+<p>我参考了很多的教程，都大同小异:<a href="https://blog.csdn.net/qq_45228330/article/details/118532144?spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4.pc_relevant_antiscanv2&amp;utm_relevant_index=8">uniapp实现微信小程序云开发数据库访问，并解决云开发数据库获取不到数据问题</a></p>
+<p>但是我的问题非常特殊：<br>
+<code>errMsg: Environment not found</code></p>
+<p>我对比了很多教程，操作都没问题的情况下，百思不得其解。</p>
+<p>最后我都绝望的准备去睡了，后来抱着试一试的心态，调整了一下环境ID，启用了自带的免费环境，结果却一次成功……</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1650569841227.png" alt="" loading="lazy"></figure>
+<p>黄色的环境ID总是不行，耗费了我至少6个小时的时间；换到红色的默认环境，立刻就可以了。</p>
+<p>如此天坑，肯定要记录一下，希望以后其他朋友遇到的时候能看到我这篇心得。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://arrrr110.github.io/tag/7eIerg9x_q/" class="tag">
+                    uni-app
+                  </a>
+                
+                  <a href="https://arrrr110.github.io/tag/9vpRg5wDcH/" class="tag">
+                    微信小程序
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://arrrr110.github.io/post/wo-da-chu-liao-yi-ge-lu-shi-chuan-shi-luan-dou-ming-chang-mian/">
+                  <h3 class="post-title">
+                    我打出了一个炉石传世乱斗名场面……
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

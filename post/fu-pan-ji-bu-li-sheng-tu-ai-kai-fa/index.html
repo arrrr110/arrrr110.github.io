@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>复盘：吉卜力生图AI开发 | 医事与摩托车维修技术</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://arrrr110.github.io/favicon.ico?v=1755485545755">
+<link rel="stylesheet" href="https://arrrr110.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+开发了一个小程序，用于将图片转化为特定的艺术风格，这是一个偏娱乐类的应用，特此记录一下。
+
+体验：
+
+技术方案
+前端：uniapp + 小程序云开发
+后端：Django + Django Rest Farmwork + Celery + ..." />
+    <meta name="keywords" content="JavaScript,uni-app,微信小程序" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://arrrr110.github.io">
+        <img src="https://arrrr110.github.io/images/avatar.png?v=1755485545755" class="site-logo">
+        <h1 class="site-title">医事与摩托车维修技术</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      享受热爱——23画生的博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://arrrr110.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">复盘：吉卜力生图AI开发</h2>
+            <div class="post-date">2025-08-12</div>
+            
+            <div class="post-content" v-pre>
+              <!-- more -->
+<p>开发了一个小程序，用于将图片转化为特定的艺术风格，这是一个偏娱乐类的应用，特此记录一下。</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1754990253609.jpg" alt="" loading="lazy"></figure>
+<p>体验：<br>
+<img src="https://arrrr110.github.io/post-images/1754998807967.jpg" alt="" loading="lazy"></p>
+<h1 id="技术方案">技术方案</h1>
+<p>前端：uniapp + 小程序云开发<br>
+后端：Django + Django Rest Farmwork + Celery + Redis</p>
+<h2 id="架构设计">架构设计</h2>
+<figure data-type="image" tabindex="2"><img src="https://arrrr110.github.io/post-images/1754992513479.png" alt="" loading="lazy"></figure>
+<p>特殊的地方在于，任务队列先签收了这个网络请求任务，像个快递员一样签收个单子，有个收货回执task_id，当API返回真正的信息后，在更新收获回执更多内容，包括状态，返回的image链接等。</p>
+<p>AI整理我的前端开发日志如下：<br>
+<a href="https://arrrr110.github.io/post/ji-bu-li-feng-ge-zhuan-huan-gong-ju-cong-gong-neng-shi-xian-dao-ti-yan-you-hua/">吉卜力风格转换工具开发全记录</a></p>
+<!-- more -->
+<p>后端开发日志如下：<br>
+<a href="https://arrrr110.github.io/post/gou-jian-yi-bu-ren-wu-dui-lie-fu-wu-djangodrfcelery-shi-zhan-zhi-nan/">构建异步任务队列服务：Django+DRF+Celery实战指南</a></p>
+<!-- more -->
+<h2 id="最终效果">最终效果</h2>
+<figure data-type="image" tabindex="3"><img src="https://arrrr110.github.io/post-images/1754995416208.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://arrrr110.github.io/post-images/1754995525481.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://arrrr110.github.io/post-images/1754998745708.png" alt="" loading="lazy"></figure>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://arrrr110.github.io/tag/ONl6rvDu6b/" class="tag">
+                    JavaScript
+                  </a>
+                
+                  <a href="https://arrrr110.github.io/tag/7eIerg9x_q/" class="tag">
+                    uni-app
+                  </a>
+                
+                  <a href="https://arrrr110.github.io/tag/9vpRg5wDcH/" class="tag">
+                    微信小程序
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://arrrr110.github.io/post/lesslesshuo-bi-quan-li-yu-ren-greatergreater-di-dong-sheng-du-shu-bi-ji/">
+                  <h3 class="post-title">
+                    《货币、权力与人》（翟东升）读书笔记
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

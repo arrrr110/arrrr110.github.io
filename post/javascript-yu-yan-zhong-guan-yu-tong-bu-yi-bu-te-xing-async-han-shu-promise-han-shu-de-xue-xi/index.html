@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>JavaScript语言中关于同步/异步特性、async函数、Promise函数的学习 | 医事与摩托车维修技术</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://arrrr110.github.io/favicon.ico?v=1755485545755">
+<link rel="stylesheet" href="https://arrrr110.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+最近在学习Vue框架，并探索对小程序的重构，开发过程中越发感觉到到基础知识的重要性，特地读了几篇不错的文章，在此记录：
+第一篇：JS中的同步和异步
+摘抄：
+所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（..." />
+    <meta name="keywords" content="JavaScript,uni-app" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://arrrr110.github.io">
+        <img src="https://arrrr110.github.io/images/avatar.png?v=1755485545755" class="site-logo">
+        <h1 class="site-title">医事与摩托车维修技术</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      享受热爱——23画生的博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://arrrr110.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">JavaScript语言中关于同步/异步特性、async函数、Promise函数的学习</h2>
+            <div class="post-date">2022-04-27</div>
+            
+            <div class="post-content" v-pre>
+              <figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/javascript-yu-yan-zhong-guan-yu-tong-bu-yi-bu-te-xing-async-han-shu-promise-han-shu-de-xue-xi.png" alt="" loading="lazy"></figure>
+<p>最近在学习Vue框架，并探索对小程序的重构，开发过程中越发感觉到到基础知识的重要性，特地读了几篇不错的文章，在此记录：</p>
+<h1 id="第一篇js中的同步和异步">第一篇：<a href="https://zhuanlan.zhihu.com/p/40803301">JS中的同步和异步</a></h1>
+<p><strong><strong>摘抄：</strong></strong><br>
+所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入&quot;任务队列&quot;（task queue）的任务，只有等主线程任务执行完毕，&quot;任务队列&quot;开始通知主线程，请求执行任务，该任务才会进入主线程执行。</p>
+<p>具体来说，异步运行机制如下：</p>
+<p>（1）所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。<br>
+（2）主线程之外，还存在一个&quot;任务队列&quot;（task queue）。只要异步任务有了运行结果，就在&quot;任务队列&quot;之中放置一个事件。<br>
+（3）一旦&quot;执行栈&quot;中的所有同步任务执行完毕，系统就会读取&quot;任务队列&quot;，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。<br>
+（4）主线程不断重复上面的第三步。</p>
+<h1 id="第二篇js中的同步和异步">第二篇：<a href="https://www.cnblogs.com/Yellow-ice/p/10433423.html">js中的同步和异步</a></h1>
+<p><strong><strong>摘抄：</strong></strong><br>
+我们可以使用new Promise进行Promise的创建</p>
+<pre><code>function wait(time) {
+    return new Promise(function(resolve,reject) {
+    setTimeout(resolve,time);
+});
+
+</code></pre>
+<p>}<br>
+这个时候我们就可以使用Promise处理异步任务啦</p>
+<pre><code>wait(1000).then(function(){
+    console.log(1);
+})
+
+</code></pre>
+<p>上面这个例子表示1秒后输出1，同样的道理，我们可以使用Promise进行更加复杂的操作，关于更多的操作，就不继续说啦，关于异步的实现，其实还有其它的一些方法，但是因为上面说的这两种方法用的比较多，所以就只说上面这两种了</p>
+<h1 id="第三篇async函数">第三篇：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function">async函数</a></h1>
+<p><strong><strong>摘要：</strong></strong><br>
+async函数一定会返回一个promise对象。如果一个async函数的返回值看起来不是promise，那么它将会被隐式地包装在一个promise中。</p>
+<p>例如，如下代码:</p>
+<pre><code>async function foo() {
+    return 1
+}
+
+</code></pre>
+<p>等价于:</p>
+<pre><code>function foo() {
+    return Promise.resolve(1)
+}
+
+</code></pre>
+<p>async函数的函数体可以被看作是由0个或者多个await表达式分割开来的。从第一行代码直到（并包括）第一个await表达式（如果有的话）都是同步运行的。这样的话，一个不含await表达式的async函数是会同步运行的。然而，如果函数体内有一个await表达式，async函数就一定会异步执行。</p>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AF%87js%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5">第一篇：JS中的同步和异步</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AF%87js%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5">第二篇：js中的同步和异步</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AF%87async%E5%87%BD%E6%95%B0">第三篇：async函数</a></li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://arrrr110.github.io/tag/ONl6rvDu6b/" class="tag">
+                    JavaScript
+                  </a>
+                
+                  <a href="https://arrrr110.github.io/tag/7eIerg9x_q/" class="tag">
+                    uni-app
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://arrrr110.github.io/post/uni-app-kuang-jia-chong-gou-yuan-sheng-wei-xin-xiao-cheng-xu-dui-jie-yun-kai-fa-shu-ju-ku-de-da-keng-zhao-bu-dao-huan-jing/">
+                  <h3 class="post-title">
+                    uni-app框架重构原生微信小程序：对接云开发数据库的大坑，找不到环境
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

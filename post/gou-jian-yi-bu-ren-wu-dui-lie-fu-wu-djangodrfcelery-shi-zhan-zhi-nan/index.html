@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>构建异步任务队列服务：Django+DRF+Celery实战指南 | 医事与摩托车维修技术</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://arrrr110.github.io/favicon.ico?v=1755485545755">
+<link rel="stylesheet" href="https://arrrr110.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+在处理耗时任务（如图片风格转换）时，同步接口往往会让用户陷入漫长等待，甚至因超时导致请求失败。为此，我基于Django+DRF+Celery搭建了一套异步任务队列服务，让用户提交请求后即可获得taskId，通过轮询或手动刷新查询结果。本文..." />
+    <meta name="keywords" content="uni-app,微信小程序,小组织军规" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://arrrr110.github.io">
+        <img src="https://arrrr110.github.io/images/avatar.png?v=1755485545755" class="site-logo">
+        <h1 class="site-title">医事与摩托车维修技术</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      享受热爱——23画生的博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://arrrr110.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">构建异步任务队列服务：Django+DRF+Celery实战指南</h2>
+            <div class="post-date">2025-08-12</div>
+            
+            <div class="post-content" v-pre>
+              <!-- more -->
+<p>在处理耗时任务（如图片风格转换）时，同步接口往往会让用户陷入漫长等待，甚至因超时导致请求失败。为此，我基于Django+DRF+Celery搭建了一套异步任务队列服务，让用户提交请求后即可获得taskId，通过轮询或手动刷新查询结果。本文将分享从方案设计到服务器部署的全过程，包含避坑经验与实战细节。</p>
+<h2 id="技术方案概述">技术方案概述</h2>
+<p>核心思路是通过<strong>异步任务队列</strong>解耦请求与处理流程：</p>
+<ol>
+<li>用户提交任务后，系统立即返回唯一标识<code>taskId</code>，无需等待任务完成</li>
+<li>后端将任务丢入Celery队列，由worker异步处理</li>
+<li>用户通过<code>taskId</code>查询任务状态（成功/失败/处理中）</li>
+<li>支持轮询或手动刷新两种查询方式</li>
+</ol>
+<p>技术栈组合：</p>
+<ul>
+<li><strong>Django+DRF</strong>：构建RESTful API，处理HTTP请求与数据交互</li>
+<li><strong>Celery</strong>：分布式任务队列，管理异步任务的调度与执行</li>
+<li><strong>Redis</strong>：作为Celery的消息代理，存储任务队列与结果</li>
+<li><strong>Nginx+Uvicorn</strong>：部署生产环境，处理反向代理与ASGI服务</li>
+<li><strong>MySQL</strong>：服务器端存储任务数据（本地开发用SQLite3）</li>
+</ul>
+<h2 id="开发历程从本地搭建到服务器部署">开发历程：从本地搭建到服务器部署</h2>
+<h3 id="阶段一本地开发环境搭建2025年4月">阶段一：本地开发环境搭建（2025年4月）</h3>
+<h4 id="1-环境隔离与项目初始化">1. 环境隔离与项目初始化</h4>
+<p>为避免Python版本冲突，采用多版本共存方案：</p>
+<ul>
+<li>保留原有Python 3.10，新增Python 3.13</li>
+<li>在<code>/var/www</code>目录创建虚拟环境：<pre><code class="language-bash">mkdir env &amp;&amp; cd env
+python3.13 -m venv myenv  # 创建虚拟环境
+source myenv/bin/activate  # 激活环境
+</code></pre>
+</li>
+</ul>
+<h4 id="2-项目结构与配置">2. 项目结构与配置</h4>
+<ul>
+<li>创建Django项目与应用：<pre><code class="language-bash">mkdir ghibli &amp;&amp; cd ghibli
+django-admin startproject mysite .  # 项目核心配置
+python manage.py startapp task_queue  # 任务队列应用
+</code></pre>
+</li>
+<li>用<code>.env</code>文件隔离环境变量（数据库配置、密钥等）：<pre><code class="language-ini"># .env示例
+DB_NAME=ghibli_task
+DB_USER=root
+DB_PASSWORD='your_password'
+SECRET_KEY='django-insecure-xxx'
+ALLOWED_HOSTS=47.99.170.1,localhost
+</code></pre>
+</li>
+<li>配置<code>.gitignore</code>，避免提交虚拟环境、日志、本地配置等文件。</li>
+</ul>
+<h4 id="3-核心功能开发">3. 核心功能开发</h4>
+<ul>
+<li><strong>日志系统</strong>：在视图中记录请求详情（方法、URL、头信息等），便于调试：<pre><code class="language-python"># task_queue/views.py
+import logging
+from django.http import HttpResponse
+
+logger = logging.getLogger(__name__)
+
+def log_request(request):
+    logger.info(f&quot;Method: {request.method}, URL: {request.path}, Data: {request.body}&quot;)
+    return HttpResponse(&quot;Request logged&quot;)
+</code></pre>
+</li>
+<li><strong>URL路由</strong>：配置DRF接口路由，实现任务提交与查询接口。</li>
+<li><strong>异步任务配置</strong>：
+<ul>
+<li>安装Celery与Redis：<code>pip install celery redis</code></li>
+<li>初始化Celery：在项目根目录创建<code>celery.py</code>，关联Django配置</li>
+<li>测试本地任务队列：<pre><code class="language-bash"># 启动Redis（Windows）
+.\redis-server.exe .\redis.windows.conf
+
+# 启动Celery worker（单线程模式，适合测试）
+celery -A mysite worker --loglevel=INFO -P eventlet
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="阶段二服务器部署与问题排查2025年5-7月">阶段二：服务器部署与问题排查（2025年5-7月）</h3>
+<h4 id="1-服务器环境准备">1. 服务器环境准备</h4>
+<ul>
+<li><strong>系统安全</strong>：初期遭遇挖矿病毒，通过以下措施加固：
+<ul>
+<li>更换强密码（如<code>Ghibli!23qwer</code>）</li>
+<li>改用Xshell密钥登录，禁用密码登录</li>
+<li>定期检查CPU与磁盘占用，及时发现异常进程</li>
+</ul>
+</li>
+<li><strong>依赖安装</strong>：
+<ul>
+<li>部署MySQL替代SQLite3（生产环境更稳定）</li>
+<li>安装Nginx、Redis、CertBot（SSL证书）等工具</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-部署流程详解">2. 部署流程详解</h4>
+<ol>
+<li><strong>代码同步</strong>：通过Gitee中转，将本地代码克隆到服务器</li>
+<li><strong>环境配置</strong>：
+<ul>
+<li>安装项目依赖：<code>pip install -r requirements.txt</code></li>
+<li>收集静态文件：<code>python manage.py collectstatic</code></li>
+<li>迁移数据库：<code>python manage.py migrate</code></li>
+</ul>
+</li>
+<li><strong>服务启动</strong>：
+<ul>
+<li><strong>Redis</strong>：设置自启动，<code>sudo systemctl enable redis-server</code></li>
+<li><strong>Celery</strong>：通过systemd配置自启动，解决权限问题：<pre><code class="language-ini"># /etc/systemd/system/celery.service
+[Unit]
+Description=Celery Service
+After=network.target redis-server.service
+
+[Service]
+User=root
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<!-- more -->
+<pre><code> WorkingDirectory=/var/www/dist/ghibli
+ ExecStart=/bin/bash -c 'source /var/www/dist/env_g/bin/activate &amp;&amp; celery -A mysite worker --loglevel=info'
+ Restart=always
+ ```
+</code></pre>
+<ul>
+<li><strong>Django服务</strong>：用Uvicorn后台运行，避免窗口关闭后进程终止：<pre><code class="language-bash">nohup uvicorn mysite.asgi:application --host 0.0.0.0 --port 8080 &gt; uvicorn.log 2&gt;&amp;1 &amp;
+</code></pre>
+</li>
+</ul>
+<ol start="4">
+<li><strong>Nginx与SSL配置</strong>：
+<ul>
+<li>配置反向代理，将80/443端口请求转发到8080端口</li>
+<li>用CertBot生成SSL证书，实现HTTPS访问</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-常见问题与解决方案">3. 常见问题与解决方案</h4>
+<ul>
+<li><strong>Celery任务不执行</strong>：检查Redis连接、worker状态，通过<code>celery -A mysite inspect active</code>查看活跃任务</li>
+<li><strong>权限问题</strong>：确保项目目录属主为root，权限设置为755</li>
+<li><strong>代码更新后不生效</strong>：需重启Celery与Uvicorn，Celery不会自动检测代码变更</li>
+<li><strong>图片生成失败</strong>：排查API调用限制（如域名封锁，需配置反向代理）、任务超时设置</li>
+</ul>
+<h3 id="阶段三生产环境优化">阶段三：生产环境优化</h3>
+<ul>
+<li><strong>性能监控</strong>：通过<code>journalctl -u celery.service -f</code>监听Celery日志，<code>tail -f uvicorn.log</code>跟踪请求</li>
+<li><strong>自动部署</strong>：编写脚本实现代码拉取、依赖更新、服务重启的一键操作</li>
+<li><strong>高可用</strong>：设置服务自启动，确保服务器重启后自动恢复运行</li>
+</ul>
+<h2 id="总结与避坑指南">总结与避坑指南</h2>
+<ol>
+<li><strong>环境隔离</strong>：始终用虚拟环境与<code>.env</code>文件管理配置，避免开发/生产环境混淆</li>
+<li><strong>Celery使用</strong>：
+<ul>
+<li>本地测试用<code>-P eventlet</code>参数（Windows兼容），生产环境无需</li>
+<li>任务失败时，优先检查消息代理（Redis）连接状态</li>
+</ul>
+</li>
+<li><strong>服务器安全</strong>：定期更换密码，禁用密码登录，监控异常进程</li>
+<li><strong>部署技巧</strong>：用<code>nohup</code>或systemd管理后台进程，避免手动启动导致的服务中断</li>
+</ol>
+<p>通过这套方案，我们成功实现了图片风格转换任务的异步处理，大幅提升了用户体验。如果你也在开发类似的耗时任务系统，希望本文的经验能帮你少走弯路～</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://arrrr110.github.io/tag/7eIerg9x_q/" class="tag">
+                    uni-app
+                  </a>
+                
+                  <a href="https://arrrr110.github.io/tag/9vpRg5wDcH/" class="tag">
+                    微信小程序
+                  </a>
+                
+                  <a href="https://arrrr110.github.io/tag/cZ7ccDyRTd/" class="tag">
+                    小组织军规
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://arrrr110.github.io/post/ji-bu-li-feng-ge-zhuan-huan-gong-ju-cong-gong-neng-shi-xian-dao-ti-yan-you-hua/">
+                  <h3 class="post-title">
+                    吉卜力风格转换工具：从功能实现到体验优化
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

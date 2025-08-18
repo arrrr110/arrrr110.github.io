@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>吉卜力风格转换工具：从功能实现到体验优化 | 医事与摩托车维修技术</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://arrrr110.github.io/favicon.ico?v=1755485545755">
+<link rel="stylesheet" href="https://arrrr110.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="在前端开发的道路上，每一个项目都是一次充满挑战与成长的旅程。近期，我负责开发了一款名为“ghibli_style_shift”的吉卜力风格转换工具（付费小程序），期间遇到了不少技术难题，也积累了许多实用经验。今天就来和大家分享一下这个项目的..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://arrrr110.github.io">
+        <img src="https://arrrr110.github.io/images/avatar.png?v=1755485545755" class="site-logo">
+        <h1 class="site-title">医事与摩托车维修技术</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      享受热爱——23画生的博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://arrrr110.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">吉卜力风格转换工具：从功能实现到体验优化</h2>
+            <div class="post-date">2025-08-12</div>
+            
+            <div class="post-content" v-pre>
+              <p>在前端开发的道路上，每一个项目都是一次充满挑战与成长的旅程。近期，我负责开发了一款名为“ghibli_style_shift”的吉卜力风格转换工具（付费小程序），期间遇到了不少技术难题，也积累了许多实用经验。今天就来和大家分享一下这个项目的开发历程与关键优化点。</p>
+<h2 id="项目基础信息">项目基础信息</h2>
+<ul>
+<li><strong>正式小程序 AppID</strong>：***</li>
+<li><strong>项目地址</strong>：<a href="https://gitcode.com/%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80">ghibli_style_shift: 吉卜力风格转换工具（付费）- GitCode</a></li>
+<li><strong>核心页面</strong>：操作页（用户上传图片、选择风格的核心交互页）、历史记录页（展示用户过往转换记录）</li>
+</ul>
+<h2 id="设计与交互优化从样式到体验的打磨">设计与交互优化：从样式到体验的打磨</h2>
+<h3 id="新版风格适配解决-swiper-组件高度难题">新版风格适配：解决 Swiper 组件高度难题</h3>
+<p>在小程序开发中，Swiper 组件的默认高度往往是影响布局的“老大难”问题。我们参考了 Taro 中 Swiper 自动高度的解决方案，通过动态计算内容高度并绑定到组件上，让滑动区域能够根据图片内容自适应，避免了固定高度导致的图片拉伸或留白问题，使吉卜力风格的图片展示更自然。</p>
+<h3 id="细节优化字体与弹窗体验">细节优化：字体与弹窗体验</h3>
+<ul>
+<li><strong>字体优化</strong>：为了贴合吉卜力动画的治愈系风格，我们调整了全局字体样式，选用圆润清晰的无衬线字体，在保证可读性的同时增强了视觉亲和力。</li>
+<li><strong>Vue3 组合式弹窗 bug 修复</strong>：开发中发现组合式 API 编写的弹窗偶尔会出现关闭后状态异常的问题，最终通过“关闭开发者工具重新运行”的临时方案规避，后续在构建流程中增加了状态重置逻辑彻底解决。</li>
+</ul>
+<h2 id="功能开发核心逻辑与技术难点">功能开发：核心逻辑与技术难点</h2>
+<h3 id="图片处理从上传到展示的全链路优化">图片处理：从上传到展示的全链路优化</h3>
+<p>图片处理是本工具的核心环节，也是问题集中的“重灾区”，主要面临三个挑战：</p>
+<ol>
+<li>
+<p><strong>图片体积校验</strong><br>
+初期用户反馈“图片太大传不上去”，排查发现是后端接口对图片体积有限制。解决方案是：在前端通过 <code>ImageTools.checkImageSize</code> 方法校验图片大小，超过阈值时自动调用 <code>compressImage</code> 压缩，同时配合 Nginx 配置调整上传限制，双重保障避免上传失败。</p>
+<pre><code class="language-html">&lt;uni-file-picker 
+  ref=&quot;picker&quot; 
+  :disabled=&quot;read_only&quot; 
+  v-model=&quot;tempImageValue&quot; 
+  file-mediatype=&quot;image&quot;
+  mode=&quot;grid&quot; 
+  file-extname=&quot;png,jpg&quot; 
+  limit=&quot;1&quot;
+  :imageStyles=&quot;{ width: 100, height: 100 }&quot;
+  @select=&quot;select&quot; 
+  @progress=&quot;progress&quot; 
+  @success=&quot;success&quot; 
+  @fail=&quot;fail&quot;
+&gt;选择&lt;/uni-file-picker&gt;
+</code></pre>
+<pre><code class="language-javascript">// 图片选择与体积校验
+const select = async (e) =&gt; {
+  const tooLarge = await ImageTools.checkImageSize(e.tempFilePaths[0])
+  if (tooLarge) {
+    uni.showLoading({ title: '压缩文件' })
+    const new_temp_path = await ImageTools.compressImage(e.tempFilePaths[0])
+    imagePath.value = new_temp_path
+    imageValue.value = [new_temp_path]
+    uni.hideLoading()
+  } else {
+    imagePath.value = e.tempFilePaths[0]
+    imageValue.value = e.tempFilePaths
+  }
+}
+</code></pre>
+</li>
+<li>
+<p><strong>网络请求稳定性</strong><br>
+小程序网络请求频繁出现超时问题，尤其是生成图片时接口响应较慢。我们通过两个方向优化：</p>
+<ul>
+<li>延长请求超时时间，适配生成图片的耗时场景；</li>
+<li>增加请求重试机制，针对临时网络波动自动重试，减少用户手动操作。</li>
+</ul>
+</li>
+<li>
+<p><strong>图片加载速度</strong><br>
+初期图片加载缓慢严重影响体验，我们测试了两种优化思路：</p>
+<ul>
+<li>思路一：代理服务器中转，效果不理想；</li>
+<li>思路二：后端获取图片链接后自动下载至云存储，用户访问时直接读取云存储资源，配合 CDN 加速，最终加载速度提升 60%。</li>
+</ul>
+</li>
+</ol>
+<h3 id="云函数与后端交互核心功能支撑">云函数与后端交互：核心功能支撑</h3>
+<p>项目依赖云函数实现关键业务逻辑，包括：</p>
+<ul>
+<li>上传图片：通过 <code>wx.cloud.uploadFile</code> 将用户图片上传至云存储；</li>
+<li>生图处理：调用风格转换 API 生成吉卜力风格图片；</li>
+<li>存图与支付：生成的图片存入云存储，同步处理支付逻辑；</li>
+<li>更新定时器：定期清理过期临时文件，优化存储资源。</li>
+</ul>
+<pre><code class="language-javascript">// 图片上传至云存储示例
+wx.cloud.uploadFile({
+  cloudPath: `escort_paper/${doc_id.value}.png`, // 云端路径
+  filePath: imagePath.value, // 本地临时路径
+  success: async (res) =&gt; {
+    formData.value.image = [res.fileID]
+    const newres = await update_escort(doc_id.value, formData.value)
+    if (newres.errMsg === &quot;document.update:ok&quot;) {
+      dialogToggle('success')
+    }
+  },
+  fail: console.error
+})
+</code></pre>
+<h2 id="调试与内测问题排查与迭代">调试与内测：问题排查与迭代</h2>
+<p>在项目内测阶段，我们收集了不少真实场景下的问题并逐步修复：</p>
+<ol>
+<li>
+<p><strong>列表页与详情页加载异常</strong><br>
+偶发不加载的情况，推测是临时链接过期导致，目前通过“重新进入小程序”可临时解决，后续计划通过永久链接替换临时链接彻底修复。</p>
+</li>
+<li>
+<p><strong>下载图片 bug</strong><br>
+付款后下载原图失败是高频问题，我们尝试：</p>
+<ul>
+<li>调整用户隐私保护设置，确保小程序有下载权限；</li>
+<li>参考微信开放社区的解决方案，优化文件下载路径处理，最终在 2025 年 5 月 12 日彻底修复。</li>
+</ul>
+</li>
+<li>
+<p><strong>功能扩展与体验提升</strong></p>
+<ul>
+<li>增加更多吉卜力风格选项，满足多样化需求；</li>
+<li>解决列表上限超 20 条后溢出的问题，采用“分批次获取 + 云函数采集”的分页方案；</li>
+<li>新增上传图片后即时回显预览功能，让用户操作更直观。</li>
+</ul>
+</li>
+</ol>
+<h2 id="未来规划">未来规划</h2>
+<p>目前项目已逐步稳定，但仍有优化空间：</p>
+<ul>
+<li>完善数据统计功能，监控每日新用户、生成量、分享量等核心指标；</li>
+<li>优化后台数据详情页的图片预览体验；</li>
+<li>探索更多风格转换模型，丰富产品功能。</li>
+</ul>
+<p>开发这款工具的过程，像是一场“发现问题-解决问题”的循环，每一次优化都让产品更贴近用户需求。如果你也在开发类似的图片处理工具，希望这些经验能给你带来一些启发～</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://arrrr110.github.io/post/fu-pan-ji-bu-li-sheng-tu-ai-kai-fa/">
+                  <h3 class="post-title">
+                    复盘：吉卜力生图AI开发
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

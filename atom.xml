@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://arrrr110.github.io</id>
+    <title>医事与摩托车维修技术</title>
+    <updated>2025-08-18T02:52:38.871Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://arrrr110.github.io"/>
+    <link rel="self" href="https://arrrr110.github.io/atom.xml"/>
+    <subtitle>享受热爱——23画生的博客</subtitle>
+    <logo>https://arrrr110.github.io/images/avatar.png</logo>
+    <icon>https://arrrr110.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2025, 医事与摩托车维修技术</rights>
+    <entry>
+        <title type="html"><![CDATA[一个独立游戏开发者的工作规划]]></title>
+        <id>https://arrrr110.github.io/post/yi-ge-du-li-you-xi-kai-fa-zhe-de-gong-zuo-gui-hua/</id>
+        <link href="https://arrrr110.github.io/post/yi-ge-du-li-you-xi-kai-fa-zhe-de-gong-zuo-gui-hua/">
+        </link>
+        <updated>2025-08-18T00:49:32.000Z</updated>
+        <content type="html"><![CDATA[<p>之前一直在摸索Godot开发引擎，<br>
+由于我的电脑本身配置比较老，所以我格外钟爱Godot这样的轻量级开发引擎。<br>
+从技术栈角度来看，我是多么渴望Godot能适配鸿蒙，让我可以在鸿蒙OS上毫无门槛的开发游戏啊。</p>
+<p>作为一个刚入门的独立开发者，我觉得独立游戏和软件产品还是有很多共通之处。</p>
+<h3 id="首先游戏和软件产品都遵循经典的项目架构">首先，游戏和软件产品都遵循经典的项目架构。</h3>
+<p>软件产品一般是Template、View、Models架构；<br>
+对应游戏的Sence、Script架构，应该还有类似数据结构的模块，我还没有接触到。</p>
+<h3 id="其次游戏的编程思想也是面向对象的">其次，游戏的编程思想也是面向对象的。</h3>
+<p>游戏一般是一个个的场景组成的，场景中的角色、道具、地形和怪物都是子场景，当引入这些元素时，一般也是经过实例化后，在添加到场景中。因此也是面向对象编程。</p>
+<p>在我看来，游戏和软件产品最大的不同，或者说最本质的不同：<br>
+<strong>游戏致力于为玩家提供持续不断的选择，让玩家在游戏互动中获得快乐；游戏交互性和体验感是第一位的。</strong></p>
+<p><strong>软件产品致力于最简单的方式为用户创造价值，产品设计和功能性是第一位的。</strong></p>
+<h2 id="我的独立游戏开发计划">我的独立游戏开发计划</h2>
+<p>独立游戏开发的难度在于，为了游戏交互性和体验感，工作量巨大，毕竟像俄罗斯方块这种划时代的游戏不是谁都能发明出来的，大部分开发者只能选择增加游戏内容来不断强化交互性和体验感。</p>
+<p>根据我学习软件开发的经验，我计划用10个独立游戏项目来磨练我的开发能力，我相信，随着AI技术的不断发展，未来开发游戏将变得越来越简单，届时对游戏开发者来说，设计能力将比编码能力更加重要。</p>
+<p>我将从下面三个角度开始制作独立游戏：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>设计性</th>
+<th>美术风格</th>
+<th>开发能力</th>
+<th>目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目1</td>
+<td>低</td>
+<td>第三方</td>
+<td>低</td>
+<td>完整实现一个产品的制作与上架</td>
+</tr>
+<tr>
+<td>项目2</td>
+<td>中</td>
+<td>第三方</td>
+<td>低</td>
+<td>完整实现一个原创玩法</td>
+</tr>
+<tr>
+<td>项目3</td>
+<td>中</td>
+<td>部分原创</td>
+<td>中</td>
+<td>完整实现一个有意思的原创玩法</td>
+</tr>
+</tbody>
+</table>
+<p>项目1已经开始了：<br>
+<img src="https://arrrr110.github.io/post-images/1755484508262.png" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1755484514361.png" alt="" loading="lazy"></figure>
+<p>让我们一起进步！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[构建异步任务队列服务：Django+DRF+Celery实战指南]]></title>
+        <id>https://arrrr110.github.io/post/gou-jian-yi-bu-ren-wu-dui-lie-fu-wu-djangodrfcelery-shi-zhan-zhi-nan/</id>
+        <link href="https://arrrr110.github.io/post/gou-jian-yi-bu-ren-wu-dui-lie-fu-wu-djangodrfcelery-shi-zhan-zhi-nan/">
+        </link>
+        <updated>2025-08-12T10:02:59.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>在处理耗时任务（如图片风格转换）时，同步接口往往会让用户陷入漫长等待，甚至因超时导致请求失败。为此，我基于Django+DRF+Celery搭建了一套异步任务队列服务，让用户提交请求后即可获得taskId，通过轮询或手动刷新查询结果。本文将分享从方案设计到服务器部署的全过程，包含避坑经验与实战细节。</p>
+<h2 id="技术方案概述">技术方案概述</h2>
+<p>核心思路是通过<strong>异步任务队列</strong>解耦请求与处理流程：</p>
+<ol>
+<li>用户提交任务后，系统立即返回唯一标识<code>taskId</code>，无需等待任务完成</li>
+<li>后端将任务丢入Celery队列，由worker异步处理</li>
+<li>用户通过<code>taskId</code>查询任务状态（成功/失败/处理中）</li>
+<li>支持轮询或手动刷新两种查询方式</li>
+</ol>
+<p>技术栈组合：</p>
+<ul>
+<li><strong>Django+DRF</strong>：构建RESTful API，处理HTTP请求与数据交互</li>
+<li><strong>Celery</strong>：分布式任务队列，管理异步任务的调度与执行</li>
+<li><strong>Redis</strong>：作为Celery的消息代理，存储任务队列与结果</li>
+<li><strong>Nginx+Uvicorn</strong>：部署生产环境，处理反向代理与ASGI服务</li>
+<li><strong>MySQL</strong>：服务器端存储任务数据（本地开发用SQLite3）</li>
+</ul>
+<h2 id="开发历程从本地搭建到服务器部署">开发历程：从本地搭建到服务器部署</h2>
+<h3 id="阶段一本地开发环境搭建2025年4月">阶段一：本地开发环境搭建（2025年4月）</h3>
+<h4 id="1-环境隔离与项目初始化">1. 环境隔离与项目初始化</h4>
+<p>为避免Python版本冲突，采用多版本共存方案：</p>
+<ul>
+<li>保留原有Python 3.10，新增Python 3.13</li>
+<li>在<code>/var/www</code>目录创建虚拟环境：<pre><code class="language-bash">mkdir env &amp;&amp; cd env
+python3.13 -m venv myenv  # 创建虚拟环境
+source myenv/bin/activate  # 激活环境
+</code></pre>
+</li>
+</ul>
+<h4 id="2-项目结构与配置">2. 项目结构与配置</h4>
+<ul>
+<li>创建Django项目与应用：<pre><code class="language-bash">mkdir ghibli &amp;&amp; cd ghibli
+django-admin startproject mysite .  # 项目核心配置
+python manage.py startapp task_queue  # 任务队列应用
+</code></pre>
+</li>
+<li>用<code>.env</code>文件隔离环境变量（数据库配置、密钥等）：<pre><code class="language-ini"># .env示例
+DB_NAME=ghibli_task
+DB_USER=root
+DB_PASSWORD='your_password'
+SECRET_KEY='django-insecure-xxx'
+ALLOWED_HOSTS=47.99.170.1,localhost
+</code></pre>
+</li>
+<li>配置<code>.gitignore</code>，避免提交虚拟环境、日志、本地配置等文件。</li>
+</ul>
+<h4 id="3-核心功能开发">3. 核心功能开发</h4>
+<ul>
+<li><strong>日志系统</strong>：在视图中记录请求详情（方法、URL、头信息等），便于调试：<pre><code class="language-python"># task_queue/views.py
+import logging
+from django.http import HttpResponse
+
+logger = logging.getLogger(__name__)
+
+def log_request(request):
+    logger.info(f&quot;Method: {request.method}, URL: {request.path}, Data: {request.body}&quot;)
+    return HttpResponse(&quot;Request logged&quot;)
+</code></pre>
+</li>
+<li><strong>URL路由</strong>：配置DRF接口路由，实现任务提交与查询接口。</li>
+<li><strong>异步任务配置</strong>：
+<ul>
+<li>安装Celery与Redis：<code>pip install celery redis</code></li>
+<li>初始化Celery：在项目根目录创建<code>celery.py</code>，关联Django配置</li>
+<li>测试本地任务队列：<pre><code class="language-bash"># 启动Redis（Windows）
+.\redis-server.exe .\redis.windows.conf
+
+# 启动Celery worker（单线程模式，适合测试）
+celery -A mysite worker --loglevel=INFO -P eventlet
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="阶段二服务器部署与问题排查2025年5-7月">阶段二：服务器部署与问题排查（2025年5-7月）</h3>
+<h4 id="1-服务器环境准备">1. 服务器环境准备</h4>
+<ul>
+<li><strong>系统安全</strong>：初期遭遇挖矿病毒，通过以下措施加固：
+<ul>
+<li>更换强密码（如<code>Ghibli!23qwer</code>）</li>
+<li>改用Xshell密钥登录，禁用密码登录</li>
+<li>定期检查CPU与磁盘占用，及时发现异常进程</li>
+</ul>
+</li>
+<li><strong>依赖安装</strong>：
+<ul>
+<li>部署MySQL替代SQLite3（生产环境更稳定）</li>
+<li>安装Nginx、Redis、CertBot（SSL证书）等工具</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-部署流程详解">2. 部署流程详解</h4>
+<ol>
+<li><strong>代码同步</strong>：通过Gitee中转，将本地代码克隆到服务器</li>
+<li><strong>环境配置</strong>：
+<ul>
+<li>安装项目依赖：<code>pip install -r requirements.txt</code></li>
+<li>收集静态文件：<code>python manage.py collectstatic</code></li>
+<li>迁移数据库：<code>python manage.py migrate</code></li>
+</ul>
+</li>
+<li><strong>服务启动</strong>：
+<ul>
+<li><strong>Redis</strong>：设置自启动，<code>sudo systemctl enable redis-server</code></li>
+<li><strong>Celery</strong>：通过systemd配置自启动，解决权限问题：<pre><code class="language-ini"># /etc/systemd/system/celery.service
+[Unit]
+Description=Celery Service
+After=network.target redis-server.service
+
+[Service]
+User=root
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<!-- more -->
+<pre><code> WorkingDirectory=/var/www/dist/ghibli
+ ExecStart=/bin/bash -c 'source /var/www/dist/env_g/bin/activate &amp;&amp; celery -A mysite worker --loglevel=info'
+ Restart=always
+ ```
+</code></pre>
+<ul>
+<li><strong>Django服务</strong>：用Uvicorn后台运行，避免窗口关闭后进程终止：<pre><code class="language-bash">nohup uvicorn mysite.asgi:application --host 0.0.0.0 --port 8080 &gt; uvicorn.log 2&gt;&amp;1 &amp;
+</code></pre>
+</li>
+</ul>
+<ol start="4">
+<li><strong>Nginx与SSL配置</strong>：
+<ul>
+<li>配置反向代理，将80/443端口请求转发到8080端口</li>
+<li>用CertBot生成SSL证书，实现HTTPS访问</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-常见问题与解决方案">3. 常见问题与解决方案</h4>
+<ul>
+<li><strong>Celery任务不执行</strong>：检查Redis连接、worker状态，通过<code>celery -A mysite inspect active</code>查看活跃任务</li>
+<li><strong>权限问题</strong>：确保项目目录属主为root，权限设置为755</li>
+<li><strong>代码更新后不生效</strong>：需重启Celery与Uvicorn，Celery不会自动检测代码变更</li>
+<li><strong>图片生成失败</strong>：排查API调用限制（如域名封锁，需配置反向代理）、任务超时设置</li>
+</ul>
+<h3 id="阶段三生产环境优化">阶段三：生产环境优化</h3>
+<ul>
+<li><strong>性能监控</strong>：通过<code>journalctl -u celery.service -f</code>监听Celery日志，<code>tail -f uvicorn.log</code>跟踪请求</li>
+<li><strong>自动部署</strong>：编写脚本实现代码拉取、依赖更新、服务重启的一键操作</li>
+<li><strong>高可用</strong>：设置服务自启动，确保服务器重启后自动恢复运行</li>
+</ul>
+<h2 id="总结与避坑指南">总结与避坑指南</h2>
+<ol>
+<li><strong>环境隔离</strong>：始终用虚拟环境与<code>.env</code>文件管理配置，避免开发/生产环境混淆</li>
+<li><strong>Celery使用</strong>：
+<ul>
+<li>本地测试用<code>-P eventlet</code>参数（Windows兼容），生产环境无需</li>
+<li>任务失败时，优先检查消息代理（Redis）连接状态</li>
+</ul>
+</li>
+<li><strong>服务器安全</strong>：定期更换密码，禁用密码登录，监控异常进程</li>
+<li><strong>部署技巧</strong>：用<code>nohup</code>或systemd管理后台进程，避免手动启动导致的服务中断</li>
+</ol>
+<p>通过这套方案，我们成功实现了图片风格转换任务的异步处理，大幅提升了用户体验。如果你也在开发类似的耗时任务系统，希望本文的经验能帮你少走弯路～</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[吉卜力风格转换工具：从功能实现到体验优化]]></title>
+        <id>https://arrrr110.github.io/post/ji-bu-li-feng-ge-zhuan-huan-gong-ju-cong-gong-neng-shi-xian-dao-ti-yan-you-hua/</id>
+        <link href="https://arrrr110.github.io/post/ji-bu-li-feng-ge-zhuan-huan-gong-ju-cong-gong-neng-shi-xian-dao-ti-yan-you-hua/">
+        </link>
+        <updated>2025-08-12T09:59:40.000Z</updated>
+        <content type="html"><![CDATA[<p>在前端开发的道路上，每一个项目都是一次充满挑战与成长的旅程。近期，我负责开发了一款名为“ghibli_style_shift”的吉卜力风格转换工具（付费小程序），期间遇到了不少技术难题，也积累了许多实用经验。今天就来和大家分享一下这个项目的开发历程与关键优化点。</p>
+<h2 id="项目基础信息">项目基础信息</h2>
+<ul>
+<li><strong>正式小程序 AppID</strong>：***</li>
+<li><strong>项目地址</strong>：<a href="https://gitcode.com/%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80">ghibli_style_shift: 吉卜力风格转换工具（付费）- GitCode</a></li>
+<li><strong>核心页面</strong>：操作页（用户上传图片、选择风格的核心交互页）、历史记录页（展示用户过往转换记录）</li>
+</ul>
+<h2 id="设计与交互优化从样式到体验的打磨">设计与交互优化：从样式到体验的打磨</h2>
+<h3 id="新版风格适配解决-swiper-组件高度难题">新版风格适配：解决 Swiper 组件高度难题</h3>
+<p>在小程序开发中，Swiper 组件的默认高度往往是影响布局的“老大难”问题。我们参考了 Taro 中 Swiper 自动高度的解决方案，通过动态计算内容高度并绑定到组件上，让滑动区域能够根据图片内容自适应，避免了固定高度导致的图片拉伸或留白问题，使吉卜力风格的图片展示更自然。</p>
+<h3 id="细节优化字体与弹窗体验">细节优化：字体与弹窗体验</h3>
+<ul>
+<li><strong>字体优化</strong>：为了贴合吉卜力动画的治愈系风格，我们调整了全局字体样式，选用圆润清晰的无衬线字体，在保证可读性的同时增强了视觉亲和力。</li>
+<li><strong>Vue3 组合式弹窗 bug 修复</strong>：开发中发现组合式 API 编写的弹窗偶尔会出现关闭后状态异常的问题，最终通过“关闭开发者工具重新运行”的临时方案规避，后续在构建流程中增加了状态重置逻辑彻底解决。</li>
+</ul>
+<h2 id="功能开发核心逻辑与技术难点">功能开发：核心逻辑与技术难点</h2>
+<h3 id="图片处理从上传到展示的全链路优化">图片处理：从上传到展示的全链路优化</h3>
+<p>图片处理是本工具的核心环节，也是问题集中的“重灾区”，主要面临三个挑战：</p>
+<ol>
+<li>
+<p><strong>图片体积校验</strong><br>
+初期用户反馈“图片太大传不上去”，排查发现是后端接口对图片体积有限制。解决方案是：在前端通过 <code>ImageTools.checkImageSize</code> 方法校验图片大小，超过阈值时自动调用 <code>compressImage</code> 压缩，同时配合 Nginx 配置调整上传限制，双重保障避免上传失败。</p>
+<pre><code class="language-html">&lt;uni-file-picker 
+  ref=&quot;picker&quot; 
+  :disabled=&quot;read_only&quot; 
+  v-model=&quot;tempImageValue&quot; 
+  file-mediatype=&quot;image&quot;
+  mode=&quot;grid&quot; 
+  file-extname=&quot;png,jpg&quot; 
+  limit=&quot;1&quot;
+  :imageStyles=&quot;{ width: 100, height: 100 }&quot;
+  @select=&quot;select&quot; 
+  @progress=&quot;progress&quot; 
+  @success=&quot;success&quot; 
+  @fail=&quot;fail&quot;
+&gt;选择&lt;/uni-file-picker&gt;
+</code></pre>
+<pre><code class="language-javascript">// 图片选择与体积校验
+const select = async (e) =&gt; {
+  const tooLarge = await ImageTools.checkImageSize(e.tempFilePaths[0])
+  if (tooLarge) {
+    uni.showLoading({ title: '压缩文件' })
+    const new_temp_path = await ImageTools.compressImage(e.tempFilePaths[0])
+    imagePath.value = new_temp_path
+    imageValue.value = [new_temp_path]
+    uni.hideLoading()
+  } else {
+    imagePath.value = e.tempFilePaths[0]
+    imageValue.value = e.tempFilePaths
+  }
+}
+</code></pre>
+</li>
+<li>
+<p><strong>网络请求稳定性</strong><br>
+小程序网络请求频繁出现超时问题，尤其是生成图片时接口响应较慢。我们通过两个方向优化：</p>
+<ul>
+<li>延长请求超时时间，适配生成图片的耗时场景；</li>
+<li>增加请求重试机制，针对临时网络波动自动重试，减少用户手动操作。</li>
+</ul>
+</li>
+<li>
+<p><strong>图片加载速度</strong><br>
+初期图片加载缓慢严重影响体验，我们测试了两种优化思路：</p>
+<ul>
+<li>思路一：代理服务器中转，效果不理想；</li>
+<li>思路二：后端获取图片链接后自动下载至云存储，用户访问时直接读取云存储资源，配合 CDN 加速，最终加载速度提升 60%。</li>
+</ul>
+</li>
+</ol>
+<h3 id="云函数与后端交互核心功能支撑">云函数与后端交互：核心功能支撑</h3>
+<p>项目依赖云函数实现关键业务逻辑，包括：</p>
+<ul>
+<li>上传图片：通过 <code>wx.cloud.uploadFile</code> 将用户图片上传至云存储；</li>
+<li>生图处理：调用风格转换 API 生成吉卜力风格图片；</li>
+<li>存图与支付：生成的图片存入云存储，同步处理支付逻辑；</li>
+<li>更新定时器：定期清理过期临时文件，优化存储资源。</li>
+</ul>
+<pre><code class="language-javascript">// 图片上传至云存储示例
+wx.cloud.uploadFile({
+  cloudPath: `escort_paper/${doc_id.value}.png`, // 云端路径
+  filePath: imagePath.value, // 本地临时路径
+  success: async (res) =&gt; {
+    formData.value.image = [res.fileID]
+    const newres = await update_escort(doc_id.value, formData.value)
+    if (newres.errMsg === &quot;document.update:ok&quot;) {
+      dialogToggle('success')
+    }
+  },
+  fail: console.error
+})
+</code></pre>
+<h2 id="调试与内测问题排查与迭代">调试与内测：问题排查与迭代</h2>
+<p>在项目内测阶段，我们收集了不少真实场景下的问题并逐步修复：</p>
+<ol>
+<li>
+<p><strong>列表页与详情页加载异常</strong><br>
+偶发不加载的情况，推测是临时链接过期导致，目前通过“重新进入小程序”可临时解决，后续计划通过永久链接替换临时链接彻底修复。</p>
+</li>
+<li>
+<p><strong>下载图片 bug</strong><br>
+付款后下载原图失败是高频问题，我们尝试：</p>
+<ul>
+<li>调整用户隐私保护设置，确保小程序有下载权限；</li>
+<li>参考微信开放社区的解决方案，优化文件下载路径处理，最终在 2025 年 5 月 12 日彻底修复。</li>
+</ul>
+</li>
+<li>
+<p><strong>功能扩展与体验提升</strong></p>
+<ul>
+<li>增加更多吉卜力风格选项，满足多样化需求；</li>
+<li>解决列表上限超 20 条后溢出的问题，采用“分批次获取 + 云函数采集”的分页方案；</li>
+<li>新增上传图片后即时回显预览功能，让用户操作更直观。</li>
+</ul>
+</li>
+</ol>
+<h2 id="未来规划">未来规划</h2>
+<p>目前项目已逐步稳定，但仍有优化空间：</p>
+<ul>
+<li>完善数据统计功能，监控每日新用户、生成量、分享量等核心指标；</li>
+<li>优化后台数据详情页的图片预览体验；</li>
+<li>探索更多风格转换模型，丰富产品功能。</li>
+</ul>
+<p>开发这款工具的过程，像是一场“发现问题-解决问题”的循环，每一次优化都让产品更贴近用户需求。如果你也在开发类似的图片处理工具，希望这些经验能给你带来一些启发～</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[复盘：吉卜力生图AI开发]]></title>
+        <id>https://arrrr110.github.io/post/fu-pan-ji-bu-li-sheng-tu-ai-kai-fa/</id>
+        <link href="https://arrrr110.github.io/post/fu-pan-ji-bu-li-sheng-tu-ai-kai-fa/">
+        </link>
+        <updated>2025-08-12T09:15:43.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p>开发了一个小程序，用于将图片转化为特定的艺术风格，这是一个偏娱乐类的应用，特此记录一下。</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1754990253609.jpg" alt="" loading="lazy"></figure>
+<p>体验：<br>
+<img src="https://arrrr110.github.io/post-images/1754998807967.jpg" alt="" loading="lazy"></p>
+<h1 id="技术方案">技术方案</h1>
+<p>前端：uniapp + 小程序云开发<br>
+后端：Django + Django Rest Farmwork + Celery + Redis</p>
+<h2 id="架构设计">架构设计</h2>
+<figure data-type="image" tabindex="2"><img src="https://arrrr110.github.io/post-images/1754992513479.png" alt="" loading="lazy"></figure>
+<p>特殊的地方在于，任务队列先签收了这个网络请求任务，像个快递员一样签收个单子，有个收货回执task_id，当API返回真正的信息后，在更新收获回执更多内容，包括状态，返回的image链接等。</p>
+<p>AI整理我的前端开发日志如下：<br>
+<a href="https://arrrr110.github.io/post/ji-bu-li-feng-ge-zhuan-huan-gong-ju-cong-gong-neng-shi-xian-dao-ti-yan-you-hua/">吉卜力风格转换工具开发全记录</a></p>
+<!-- more -->
+<p>后端开发日志如下：<br>
+<a href="https://arrrr110.github.io/post/gou-jian-yi-bu-ren-wu-dui-lie-fu-wu-djangodrfcelery-shi-zhan-zhi-nan/">构建异步任务队列服务：Django+DRF+Celery实战指南</a></p>
+<!-- more -->
+<h2 id="最终效果">最终效果</h2>
+<figure data-type="image" tabindex="3"><img src="https://arrrr110.github.io/post-images/1754995416208.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://arrrr110.github.io/post-images/1754995525481.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://arrrr110.github.io/post-images/1754998745708.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《货币、权力与人》（翟东升）读书笔记]]></title>
+        <id>https://arrrr110.github.io/post/lesslesshuo-bi-quan-li-yu-ren-greatergreater-di-dong-sheng-du-shu-bi-ji/</id>
+        <link href="https://arrrr110.github.io/post/lesslesshuo-bi-quan-li-yu-ren-greatergreater-di-dong-sheng-du-shu-bi-ji/">
+        </link>
+        <updated>2022-05-23T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>1971年之后，美元关闭了黄金兑换窗口，将货币带入“后布雷顿森林体系”时代，也就是美元本位时代。</p>
+<p>在这个时代，能源国和工业国互相锁定在美元体系中，成为了依附美国的基石，供养了以美国为首的西方：石油-尼龙-5亿件衬衫换一架波音747就是这个价值链的榜样，也是全球化的样板——美元印出来后，中国负责生产，美国负责拿着成本5美分的100元绿纸片，购买中国货。</p>
+<p>正如潮水再涨，也漫不过大船的道理一样：这世上任何一个国家，只要仍然将自身货币的信用基础建立在使用美元、购买美债之上，就永世无法超越美国，就永远是美国观想宇宙中的一只猴子。</p>
+<p>在过去，美国在扩张期通过放水的方式收取“铸币税”（经测算广义铸币税约占美GDP的20%）；在收缩期则通过制造区域经济危机的方式开采“血钻”，将一个个主权国家变色为买办和官僚游乐园：一名美国医生，2015年入籍乌克兰，只需要4年的时间就能成为卫生部长，正部级干部。</p>
+<p>中国是最大的变数：一方面，中国为世界提供了大量的廉价商品，缓解了美元的通胀，为美国支付了可观的“铸币税”，培养了大量的经济买办、文化汉奸；另一方面，中国拒绝开放国内资本部门，坚持独立的财政政策，拒绝任命美国人做省部级干部，甚至在其他经济体危机的时候“抬一手”，严重干扰了美开采“血钻”的进程——中国就像一颗煮不烂的铜豌豆，与美国亦敌亦友，在拳击台上不硬碰硬打直拳，总是搂搂抱抱，找到机会还闷一拳骗点数。</p>
+<p>不过今天不一样了，美国有了新思路：立足本国全球领先的医学科研能力，“以快制快”，释放“遗传信息炸弹”，开展病毒战：成本低、传播快、隐蔽性强，由于遗传信息炸弹可以定点攻击特定人种体内的蛋白受体，引发的免疫风暴足够摧毁人的器官——相当于高速铁路上放砖头，专门制造高速列车脱轨，毁伤能量的投送效率趋近于无限——这真真是一个好武器。</p>
+<p>以上都是我的分析和推测，理由也很简单：目前美国拒绝了所有来自于联合国的溯源调查要求，也一直拒绝向国际社会正面直接解释——如果不是心理有鬼，为啥会遮遮掩掩呢？</p>
+<p>——23画生</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1653380237919.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[用Git和朋友一起开发项目：配置Git GUI汉化包]]></title>
+        <id>https://arrrr110.github.io/post/yong-git-he-peng-you-yi-qi-kai-fa-xiang-mu-shi-yong-git-gui-han-hua-bao/</id>
+        <link href="https://arrrr110.github.io/post/yong-git-he-peng-you-yi-qi-kai-fa-xiang-mu-shi-yong-git-gui-han-hua-bao/">
+        </link>
+        <updated>2022-05-06T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>git类应用是软件开发中绕不过的路，理由很简单：大部分有价值的项目需要的开发技能之多之复杂，以至于团队合作才能完成——git类应用是代码版本管理、分享项目源码的重要工具。</p>
+<h1 id="git简单使用">Git简单使用</h1>
+<p>常用的Git应用平台有：github.com、gitee.com等</p>
+<p><a href="https://cloud.tencent.com/developer/article/1414120">程序员常用的6个免费Git代码托管平台</a></p>
+<p><a href="https://gitee.com/help/labels/79">初次使用git</a><br>
+<img src="https://arrrr110.github.io/post-images/1651936633024.png" alt="" loading="lazy"><br>
+当我们把项目用Git初始化后，就可以用Git工具上传、克隆代码了。从使用的体验上来看，虽然没有通过代码包传输文件方便，但是规范了不少，代码有了安全感。</p>
+<p>值得一提的是小程序开发工具，也集成了自己的Git应用，之前在原生开发的时候也挺好用。<br>
+<img src="https://arrrr110.github.io/post-images/1651936551913.png" alt="" loading="lazy"></p>
+<p>可惜框架开发的时候用不了了，因此不论如何，还是绕不开学习Git。</p>
+<h1 id="汉化git-gui"><a href="https://blog.csdn.net/u014723479/article/details/102869727">汉化Git GUI</a></h1>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1651936022255.png" alt="" loading="lazy"></figure>
+<p><a href="https://github.com/stayor/git-gui-zh">汉化包下载地址</a></p>
+<ul>
+<li><a href="#git%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8">Git简单使用</a></li>
+<li><a href="#%E6%B1%89%E5%8C%96git-gui">汉化Git GUI</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JavaScript语言中关于同步/异步特性、async函数、Promise函数的学习]]></title>
+        <id>https://arrrr110.github.io/post/javascript-yu-yan-zhong-guan-yu-tong-bu-yi-bu-te-xing-async-han-shu-promise-han-shu-de-xue-xi/</id>
+        <link href="https://arrrr110.github.io/post/javascript-yu-yan-zhong-guan-yu-tong-bu-yi-bu-te-xing-async-han-shu-promise-han-shu-de-xue-xi/">
+        </link>
+        <updated>2022-04-26T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/javascript-yu-yan-zhong-guan-yu-tong-bu-yi-bu-te-xing-async-han-shu-promise-han-shu-de-xue-xi.png" alt="" loading="lazy"></figure>
+<p>最近在学习Vue框架，并探索对小程序的重构，开发过程中越发感觉到到基础知识的重要性，特地读了几篇不错的文章，在此记录：</p>
+<h1 id="第一篇js中的同步和异步">第一篇：<a href="https://zhuanlan.zhihu.com/p/40803301">JS中的同步和异步</a></h1>
+<p><strong><strong>摘抄：</strong></strong><br>
+所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入&quot;任务队列&quot;（task queue）的任务，只有等主线程任务执行完毕，&quot;任务队列&quot;开始通知主线程，请求执行任务，该任务才会进入主线程执行。</p>
+<p>具体来说，异步运行机制如下：</p>
+<p>（1）所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。<br>
+（2）主线程之外，还存在一个&quot;任务队列&quot;（task queue）。只要异步任务有了运行结果，就在&quot;任务队列&quot;之中放置一个事件。<br>
+（3）一旦&quot;执行栈&quot;中的所有同步任务执行完毕，系统就会读取&quot;任务队列&quot;，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。<br>
+（4）主线程不断重复上面的第三步。</p>
+<h1 id="第二篇js中的同步和异步">第二篇：<a href="https://www.cnblogs.com/Yellow-ice/p/10433423.html">js中的同步和异步</a></h1>
+<p><strong><strong>摘抄：</strong></strong><br>
+我们可以使用new Promise进行Promise的创建</p>
+<pre><code>function wait(time) {
+    return new Promise(function(resolve,reject) {
+    setTimeout(resolve,time);
+});
+
+</code></pre>
+<p>}<br>
+这个时候我们就可以使用Promise处理异步任务啦</p>
+<pre><code>wait(1000).then(function(){
+    console.log(1);
+})
+
+</code></pre>
+<p>上面这个例子表示1秒后输出1，同样的道理，我们可以使用Promise进行更加复杂的操作，关于更多的操作，就不继续说啦，关于异步的实现，其实还有其它的一些方法，但是因为上面说的这两种方法用的比较多，所以就只说上面这两种了</p>
+<h1 id="第三篇async函数">第三篇：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function">async函数</a></h1>
+<p><strong><strong>摘要：</strong></strong><br>
+async函数一定会返回一个promise对象。如果一个async函数的返回值看起来不是promise，那么它将会被隐式地包装在一个promise中。</p>
+<p>例如，如下代码:</p>
+<pre><code>async function foo() {
+    return 1
+}
+
+</code></pre>
+<p>等价于:</p>
+<pre><code>function foo() {
+    return Promise.resolve(1)
+}
+
+</code></pre>
+<p>async函数的函数体可以被看作是由0个或者多个await表达式分割开来的。从第一行代码直到（并包括）第一个await表达式（如果有的话）都是同步运行的。这样的话，一个不含await表达式的async函数是会同步运行的。然而，如果函数体内有一个await表达式，async函数就一定会异步执行。</p>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AF%87js%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5">第一篇：JS中的同步和异步</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AF%87js%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5">第二篇：js中的同步和异步</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AF%87async%E5%87%BD%E6%95%B0">第三篇：async函数</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[uni-app框架重构原生微信小程序：对接云开发数据库的大坑，找不到环境]]></title>
+        <id>https://arrrr110.github.io/post/uni-app-kuang-jia-chong-gou-yuan-sheng-wei-xin-xiao-cheng-xu-dui-jie-yun-kai-fa-shu-ju-ku-de-da-keng-zhao-bu-dao-huan-jing/</id>
+        <link href="https://arrrr110.github.io/post/uni-app-kuang-jia-chong-gou-yuan-sheng-wei-xin-xiao-cheng-xu-dui-jie-yun-kai-fa-shu-ju-ku-de-da-keng-zhao-bu-dao-huan-jing/">
+        </link>
+        <updated>2022-04-21T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>很多网友说使用框架虽然会方便一些，但是大坑也很多，我今天算是体会了。</p>
+<p>我今天花了很长时间解决uni-app无法连接小程序云开发数据库的问题。</p>
+<p>我参考了很多的教程，都大同小异:<a href="https://blog.csdn.net/qq_45228330/article/details/118532144?spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4.pc_relevant_antiscanv2&amp;utm_relevant_index=8">uniapp实现微信小程序云开发数据库访问，并解决云开发数据库获取不到数据问题</a></p>
+<p>但是我的问题非常特殊：<br>
+<code>errMsg: Environment not found</code></p>
+<p>我对比了很多教程，操作都没问题的情况下，百思不得其解。</p>
+<p>最后我都绝望的准备去睡了，后来抱着试一试的心态，调整了一下环境ID，启用了自带的免费环境，结果却一次成功……</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1650569841227.png" alt="" loading="lazy"></figure>
+<p>黄色的环境ID总是不行，耗费了我至少6个小时的时间；换到红色的默认环境，立刻就可以了。</p>
+<p>如此天坑，肯定要记录一下，希望以后其他朋友遇到的时候能看到我这篇心得。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我打出了一个炉石传世乱斗名场面……]]></title>
+        <id>https://arrrr110.github.io/post/wo-da-chu-liao-yi-ge-lu-shi-chuan-shi-luan-dou-ming-chang-mian/</id>
+        <link href="https://arrrr110.github.io/post/wo-da-chu-liao-yi-ge-lu-shi-chuan-shi-luan-dou-ming-chang-mian/">
+        </link>
+        <updated>2022-04-09T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>一图胜千言</p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1649525899520.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[魔都小奶爸：救赎]]></title>
+        <id>https://arrrr110.github.io/post/mo-du-xiao-nai-ba-jiu-shu/</id>
+        <link href="https://arrrr110.github.io/post/mo-du-xiao-nai-ba-jiu-shu/">
+        </link>
+        <updated>2022-04-05T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.cdncl.net%2Fgame%2Fuser_upload%2Fyoge%2F217c8720a425e07d3cb804a70c333a05.jpeg&amp;refer=http%3A%2F%2Fpic1.cdncl.net&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1651683686&amp;t=228ed002c541e40d1d4a4c95ed018fa0" alt="" loading="lazy"></figure>
+<p>3月，新冠疫情的变种：奥密克戎突然冲击进上海这个城市。猝不及防地我们，在中旬就进入了小区封闭的模式，到今天已经近20天了。</p>
+<p>由于有疫苗保护，我并不惧怕这个传染病，因此和媳妇在家里隔离的颇为悠闲，周末看看剧，平时远程办公。我作为一个个体户，虽然陷入了“手停口停”的尴尬，但好在时间颇多，写写代码，看看文档也为自己的水平提升感到开心（本博客就是刚封闭的时候开始部署的）。</p>
+<h1 id="在混乱中摸索">在混乱中摸索</h1>
+<p>本来我的生活会一直那么平静，直到有一天一通电话打破了我平静的生活，我的一位宝妈朋友联系我，告诉我说他们小区的宝宝因为疫情封闭的原因，出现不同程度的物资短缺，希望我能帮助他们。这让我意识到我的平静只是一种假象，其实很多城市家庭并没有那么精打细算，也并没有那么能抵御风险。</p>
+<p>于是我决定帮助他们。</p>
+<p>我们成立了一个小区业主群，群里都是忧心忡忡的家长，他们无法下楼，依然在想尽办法为自己的孩子采购物资，我委托了一位德高望重的母婴行业高管，请她为我寻找货源，正好她所在的企业是一家名声卓著的母婴连锁品牌，拥有大量的库存。于是这位高管立刻给我介绍了有关负责人，并引荐了最近的一家门店管理者。</p>
+<p>似乎我们好像看见了曙光。然而在实际采购中发现，这个社会的混乱比我想象中的还要夸张：因为疫情封闭的原因，门店的人手极度短缺，一两名员工将要面临如山一般的货物，分拣工作繁重，大量的采购订单雪片般涌来，但是偏偏没有人手有资格运输这些货物，一时间，订单淤积，人员疲惫，客户焦虑——甚至连城市外围的大仓库都已经很难进城，供应链出现明显的断裂。</p>
+<h1 id="混乱是阶梯">混乱是阶梯</h1>
+<p>面对棘手的局面，我一方面快速的了解市场的情况；另一方面不断地向各个渠道开展摸底，寻找货源。最终幸运的找到了热心帮助的志愿者和货运司机，我也从笨拙的管理中逐渐思路清晰了起来。</p>
+<p>于是实现了一个小区的采购订单，并和小区里的家长一起，殷切的期盼着货物的到来。</p>
+<figure data-type="image" tabindex="2"><img src="https://arrrr110.github.io/post-images/1649177127310.png" alt="" loading="lazy"></figure>
+<p>在休息的时候，我意识到我在找货中遇到的困难，恐怕是全上海有宝宝家庭的一个缩影，越深想，我越恐惧，我耳畔仿佛想起了宝宝的呼喊，和家长的自责，我下定决心必须做点什么。因此我开始将我的管理思路聚焦关键的堵点上：即家长们零碎的需求和秩序破坏后低效的订单沟通上。</p>
+<p>为此我设计了一张[问卷表单]（https://jinshuju.net/f/UV5mS1），他可以帮助我快速的了解家长的需求，由于内置了地址模块，我可以快速的吧多个需求按照地域分布绑定起来，将采购意向打包给当地的门店。诚然，这个活还是很辛苦，但表单的支持让我的工作变得可能。</p>
+<p>为了聚集大量的用户，我采用了企业微信的加群功能，它能在满群时自动建立新群，颇为省心，让我可以专注于业务，甚至感到了舒心。</p>
+<p>最后，我设计了一张医生的海报，由医生发起了一个“互助购物”的倡议活动。这个倡议活动是邀请所有有需求的家庭，通过企业微信的二维码，进入到社群里提交需求，再由我统一管理，将零散的订单集合在一起统一对接货源。</p>
+<p>最终结果超出了我的预期：</p>
+<p>整个上海的封闭造成的副作用是明显的，全上海的母婴人群都陷入了奶粉和纸尿布的匮乏，为了给他们对接货源，我昨天一整天就拉起了1000人的母婴群，这背后也不知道有多少忧心忡忡的家庭。</p>
+<figure data-type="image" tabindex="3"><img src="https://arrrr110.github.io/post-images/1649175717665.jpg" alt="" loading="lazy"></figure>
+<p>当我忙碌了一天静下来的时候，我才反应过来，我今天一天获取的新用户，超过了过去的一年，这是多么惊人的结果，这背后是多么惊人的困难。一座城市陷入混乱，所有人都变得脆弱，而坚强的人只要能爬起来，就能暂时比其他人高了一截。我不禁感慨：混乱是阶梯。</p>
+<p>一个2500万人的超级城市，因为一道行政命令进入了停滞，上海这个“巨人”的所有血管都卡死了，新血液流不出去，旧血液还不回来，躯体失去了力量，进入了窒息般的痉挛。放眼望去，真的有一个经济体，可以保障一个特大型城市在手术的过程中心脏摘除，血管卡死么？</p>
+<p>我真的很为这座城市的命运担忧，虽然她一定会好转起来，但也一定会留下痛苦的印记，这些印记将实时提醒着我们，一座城市有多么的脆弱，城市里的人，有多么的脆弱。</p>
+<ul>
+<li><a href="#%E5%9C%A8%E6%B7%B7%E4%B9%B1%E4%B8%AD%E6%91%B8%E7%B4%A2">在混乱中摸索</a></li>
+<li><a href="#%E6%B7%B7%E4%B9%B1%E6%98%AF%E9%98%B6%E6%A2%AF">混乱是阶梯</a></li>
+</ul>
+]]></content>
+    </entry>
+</feed>

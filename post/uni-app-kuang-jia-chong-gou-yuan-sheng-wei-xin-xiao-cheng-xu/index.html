@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>uni-app框架重构原生微信小程序：序章&amp;对接‘云开发’ | 医事与摩托车维修技术</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://arrrr110.github.io/favicon.ico?v=1755485545755">
+<link rel="stylesheet" href="https://arrrr110.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="uni-app 是一个使用 Vue.js (opens new window)开发所有前端应用的框架，
+开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/..." />
+    <meta name="keywords" content="uni-app,微信小程序" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://arrrr110.github.io">
+        <img src="https://arrrr110.github.io/images/avatar.png?v=1755485545755" class="site-logo">
+        <h1 class="site-title">医事与摩托车维修技术</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      享受热爱——23画生的博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://arrrr110.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">uni-app框架重构原生微信小程序：序章&amp;对接‘云开发’</h2>
+            <div class="post-date">2022-03-31</div>
+            
+            <div class="post-content" v-pre>
+              <p><a href="https://uniapp.dcloud.io/">uni-app</a> 是一个使用 Vue.js (opens new window)开发所有前端应用的框架，</p>
+<p>开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。</p>
+<p>在此之前，我和朋友完成了一个原生小程序的开发项目：语言评估<br>
+<img src="https://arrrr110.github.io/post-images/1648729290505.jpg" alt="" loading="lazy"></p>
+<h1 id="为什么我愿意学习uni-app">为什么我愿意学习uni-app？</h1>
+<p>要实现微信小程序开发，大抵有以下两条路：</p>
+<ol>
+<li>采用微信自带的IDE工具，遵循小程序自创的编码规则搭建小程序；</li>
+<li>采用可兼容微信小程序的框架，遵循框架的编码规则搭建小程序，并在微信IDE上自动编译实现。</li>
+</ol>
+<p>原生开发我已经有项目经验了，也体验了原生开发的一些优势，但我依然对基于Vue.js为基础的框架非常感兴趣，原因是考虑到Vue.js在前端的泛用性，我希望利用框架提升开发效率。</p>
+<p>正好我所在的城市因为疫情进入了管控，自己的现金流业务几乎停滞，那么借此机会就开始学习把！</p>
+<h1 id="补齐框架的短板微信云开发">补齐框架的短板：微信云开发</h1>
+<p>采用框架开发微信小程序不是没有隐忧的，我在原生开发过程中，最满意的就是微信“云开发”功能，这个功能最大的优势就是<strong><strong>让小程序部署零门槛</strong></strong>，这个优势对于我这种开发小白来说，是颠覆性的，天知道我在部署业务方面多少次被撞得头破血流，以至于我在构思新应用的时候迟迟不敢考虑后端问题、甚至部署问题。</p>
+<p>微信云开发带来的福音有几点：</p>
+<ol>
+<li>在IDE工具中，前、后端和数据库一体化了，调试时不需要考虑服务器的适配问题；</li>
+<li>云开发省去了很多前端对数据库访问的权限问题，降低了调试难度；</li>
+<li>云开发中的“云函数”功能规避了本地访问数据库的查询限制，缴费也比较弹性。</li>
+</ol>
+<p>以上三个原生开发的优势，在框架开发中都要继承过来，否则框架开发是缺失的，不补齐这个短板，未来开发一定会遇到更多大坑。</p>
+<h1 id="对接云开发">对接“云开发”</h1>
+<p>我参考了这个帖子，从uniapp新项目做起：<br>
+<a href="https://blog.csdn.net/YNEWA/article/details/106019518">https://blog.csdn.net/YNEWA/article/details/106019518</a><br>
+按部就班的操作，应该就可以了。<br>
+之前是从小程序IDE上配置，弄了好久没成功，尤其是copy-webpack-plugin的版本问题，只要严格按照帖子的引导，应该就可以了。</p>
+<p>在<strong><strong>源码视图</strong></strong>下，配置<strong><strong>云开发目录</strong></strong><br>
+<a href="https://uniapp.dcloud.io/collocation/manifest.html#cloudfunctionroot">https://uniapp.dcloud.io/collocation/manifest.html#cloudfunctionroot</a></p>
+<figure data-type="image" tabindex="1"><img src="https://arrrr110.github.io/post-images/1648747585195.png" alt="" loading="lazy"></figure>
+<p>后续将利用云函数，开展正式的重构设计。</p>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E6%84%BF%E6%84%8F%E5%AD%A6%E4%B9%A0uni-app">为什么我愿意学习uni-app？</a></li>
+<li><a href="#%E8%A1%A5%E9%BD%90%E6%A1%86%E6%9E%B6%E7%9A%84%E7%9F%AD%E6%9D%BF%E5%BE%AE%E4%BF%A1%E4%BA%91%E5%BC%80%E5%8F%91">补齐框架的短板：微信云开发</a></li>
+<li><a href="#%E5%AF%B9%E6%8E%A5%E4%BA%91%E5%BC%80%E5%8F%91">对接“云开发”</a></li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://arrrr110.github.io/tag/7eIerg9x_q/" class="tag">
+                    uni-app
+                  </a>
+                
+                  <a href="https://arrrr110.github.io/tag/9vpRg5wDcH/" class="tag">
+                    微信小程序
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://arrrr110.github.io/post/jie-jue-uniapp-dai-ma-zai-xiao-cheng-xu-zhong-bao-cuo-wen-ti-appjson-wen-jian-nei-rong-cuo-wu-appjson-appjson-wei-zhao-dao/">
+                  <h3 class="post-title">
+                    解决uniapp代码在小程序中报错问题[ app.json 文件内容错误] app.json: app.json 未找到]
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
